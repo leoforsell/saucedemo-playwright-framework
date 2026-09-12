@@ -15,6 +15,19 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 - Treat Markdown as the source of truth and generated PDFs, screenshots, traces, and HTML reports as evidence.
 - Do not claim a test result, defect, release, or live report until evidence exists in the repository or CI.
 
+## How to Use the Reading Guides
+
+Each week combines a small amount of reading with hands-on work. Read the suggested material before starting the week's implementation, apply the ideas to SauceDemo, and record a short reflection in the related artifact or issue. The goal is not to finish a large reading list; it is to explain which principle you applied and show evidence of the result.
+
+For each week:
+
+1. Read the primary source and skim the optional source if time permits.
+2. Write down three principles, terms, or techniques in your own words.
+3. Apply at least one principle to the week's SauceDemo task.
+4. Check the learning outcome before marking the week complete.
+
+Use stable, authoritative sources where possible: the [ISTQB glossary](https://glossary.istqb.org/), [ISTQB Foundation Level syllabus](https://istqb.org/certifications/certified-tester-foundation-level), [MDN Web Docs](https://developer.mozilla.org/), [Playwright documentation](https://playwright.dev/docs/intro), and official GitHub documentation. Record the title, URL, and access date for sources that materially influenced a deliverable.
+
 ## Phase Overview
 
 | Phase | Weeks | Focus | Primary outcome |
@@ -33,6 +46,13 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 **Objective:** Establish scope, business risks, test levels, and release criteria before writing automation.
 
 **Learning focus:** Testing fundamentals, test activities, risk management, the test pyramid, and automation ROI.
+
+**Reading guide:**
+
+- Primary: ISTQB Foundation Level syllabus sections on testing fundamentals, test activities, and risk-based testing.
+- Reference: ISTQB glossary entries for *risk*, *risk-based testing*, *test strategy*, *entry criteria*, and *exit criteria*.
+- Apply: Compare the business impact of a failed checkout with a failed product sort and use the comparison to justify the risk matrix.
+- Learning check: Explain why probability and impact are scored separately and when testing may start or stop.
 
 **Work:**
 
@@ -61,6 +81,13 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 
 **Learning focus:** Equivalence partitioning, boundary value analysis, user stories, and Given/When/Then acceptance criteria.
 
+**Reading guide:**
+
+- Primary: ISTQB Foundation Level syllabus sections on test techniques and test analysis.
+- Reference: Martin Fowler's [Specification by Example](https://martinfowler.com/bliki/SpecificationByExample.html) overview and the [Cucumber Gherkin reference](https://cucumber.io/docs/gherkin/reference).
+- Apply: Derive partitions and boundaries for login, cart quantity, and checkout fields before writing the ten cases.
+- Learning check: Justify why every test case exists, which risk it covers, and which partition or boundary it represents.
+
 **Work:**
 
 - Write ten formal test cases with unique IDs.
@@ -86,6 +113,13 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 **Objective:** Investigate behavior beyond the happy path and report reproducible defects professionally.
 
 **Learning focus:** Exploratory testing, defect lifecycle, severity versus priority, and evidence-based reporting.
+
+**Reading guide:**
+
+- Primary: ISTQB Foundation Level syllabus sections on defect management and experience-based testing.
+- Reference: James Bach's [Exploratory Testing Explained](https://www.satisfice.com/articles/et-article) and Atlassian's [bug report guidance](https://www.atlassian.com/software/jira/guides/bug-reporting).
+- Apply: Create a time-boxed charter for each exploratory session and separate observations from confirmed defects.
+- Learning check: Explain the difference between severity and priority and reproduce one finding from a clean session record.
 
 **Work:**
 
@@ -114,6 +148,13 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 
 **Learning focus:** Test monitoring, test completion, reporting, and Go/No-Go decision-making.
 
+**Reading guide:**
+
+- Primary: ISTQB Foundation Level syllabus sections on test monitoring, control, completion, and reporting.
+- Reference: ISTQB glossary entries for *residual risk*, *release decision*, and *test summary report*.
+- Apply: Use the ten execution results and unresolved risks to make a justified Go, No-Go, or Conditional Release recommendation.
+- Learning check: Defend the release recommendation using evidence, coverage, known defects, and residual risk rather than intuition.
+
 **Work:**
 
 - Execute the ten documented cases and record pass, fail, and blocked results.
@@ -141,6 +182,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 
 **Objective:** Establish a reproducible JavaScript test project with cross-browser configuration.
 
+**Learning focus:** Node.js project structure, Playwright configuration, browser projects, reporters, and reproducible setup.
+
+**Reading guide:**
+
+- Primary: Playwright documentation on [installation](https://playwright.dev/docs/intro) and [test configuration](https://playwright.dev/docs/test-configuration).
+- Reference: npm documentation on [package.json](https://docs.npmjs.com/cli/v10/configuring-npm/package-json) and Playwright's [reporters](https://playwright.dev/docs/test-reporters).
+- Apply: Explain what each configuration option protects against and verify the project from a clean install.
+- Learning check: Describe the purpose of each browser project, reporter, and failure artifact setting.
+
 **Work:**
 
 - Initialize Node.js and Playwright.
@@ -163,6 +213,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 
 **Objective:** Build the first stable end-to-end test using accessible locators.
 
+**Learning focus:** Accessible locators, web-first assertions, actionability, and authentication flows.
+
+**Reading guide:**
+
+- Primary: Playwright documentation on [locators](https://playwright.dev/docs/locators), [writing tests](https://playwright.dev/docs/writing-tests), and [actionability](https://playwright.dev/docs/actionability).
+- Reference: MDN guidance on [accessible names](https://developer.mozilla.org/en-US/docs/Glossary/Accessible_name) and [web forms](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms).
+- Apply: Replace generated selectors with role- and label-based locators and assert observable page behavior.
+- Learning check: Explain why a chosen locator is resilient and why a web-first assertion is preferable to a fixed delay.
+
 **Work:**
 
 - Use Playwright Codegen for an initial flow, then refactor it.
@@ -182,6 +241,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 #### Week 7 - Page Object Model
 
 **Objective:** Separate page interaction details from test intent.
+
+**Learning focus:** Page Object Model design, cohesion, coupling, and separation of test intent from UI mechanics.
+
+**Reading guide:**
+
+- Primary: Playwright documentation on [page object models](https://playwright.dev/docs/pom).
+- Reference: Martin Fowler's [PageObject](https://martinfowler.com/bliki/PageObject.html) and the [single-responsibility principle](https://www.oodesign.com/single-responsibility-principle).
+- Apply: Move login and inventory interactions into page objects while keeping business assertions in the tests.
+- Learning check: Identify which responsibility belongs in a page object, fixture, or test and explain why.
 
 **Work:**
 
@@ -204,6 +272,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 
 **Objective:** Remove manual page-object construction and externalize credentials.
 
+**Learning focus:** Fixtures, dependency injection, test-data design, and safe handling of credentials.
+
+**Reading guide:**
+
+- Primary: Playwright documentation on [fixtures](https://playwright.dev/docs/test-fixtures) and [parameterized tests](https://playwright.dev/docs/test-parameterize).
+- Reference: OWASP [Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html).
+- Apply: Inject page objects through a custom fixture and load non-secret user scenarios from test data.
+- Learning check: Explain the fixture lifecycle and demonstrate that no secret or environment-specific credential is hard-coded in a test.
+
 **Work:**
 
 - Create custom fixtures with `test.extend()`.
@@ -225,6 +302,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 #### Week 9 - Assertion Hardening and Network Mocking
 
 **Objective:** Test frontend resilience and remove timing-based flakiness.
+
+**Learning focus:** Assertion design, asynchronous behavior, network interception, and frontend resilience.
+
+**Reading guide:**
+
+- Primary: Playwright documentation on [network](https://playwright.dev/docs/network), [mock APIs](https://playwright.dev/docs/mock), and [auto-waiting](https://playwright.dev/docs/actionability).
+- Reference: Martin Fowler's [Eradicating Non-Determinism in Tests](https://martinfowler.com/articles/nonDeterminism.html).
+- Apply: Block product image requests and assert that inventory remains usable without using `waitForTimeout`.
+- Learning check: Distinguish a deterministic synchronization point from a timing guess and explain what user-visible behavior the test protects.
 
 **Work:**
 
@@ -250,6 +336,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 
 **Objective:** Make project history and collaboration practices easy to understand.
 
+**Learning focus:** Git history, branching strategy, Conventional Commits, pull request review, and repository hygiene.
+
+**Reading guide:**
+
+- Primary: [Pro Git](https://git-scm.com/book/en/v2) chapters on Git basics and branching.
+- Reference: [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) and GitHub's [pull request review documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests).
+- Apply: Review the repository as a new contributor and verify that ignored files, branch names, commits, and PR evidence follow the documented conventions.
+- Learning check: Explain what makes a commit reviewable and how a pull request connects code, risk, validation, and evidence.
+
 **Work:**
 
 - Add a complete `.gitignore`.
@@ -270,6 +365,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 #### Week 11 - GitHub Actions Test Pipeline
 
 **Objective:** Run the full suite automatically on pushes and pull requests.
+
+**Learning focus:** CI workflow design, reproducible environments, artifact retention, and failure visibility.
+
+**Reading guide:**
+
+- Primary: GitHub Actions documentation on [workflow syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) and [storing workflow data as artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts).
+- Reference: Playwright's [continuous integration guide](https://playwright.dev/docs/ci).
+- Apply: Trace every workflow step from checkout through browser installation, test execution, and artifact upload.
+- Learning check: Explain why failures must fail the job while reports and failure evidence still upload with `if: always()`.
 
 **Work:**
 
@@ -292,6 +396,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 #### Week 12 - GitHub Pages Reporting
 
 **Objective:** Publish the latest Playwright HTML report for external review.
+
+**Learning focus:** Static-site deployment, artifact publishing, permissions, and public report safety.
+
+**Reading guide:**
+
+- Primary: GitHub Pages documentation on [publishing with GitHub Actions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
+- Reference: Playwright documentation on the [HTML report](https://playwright.dev/docs/test-reporters).
+- Apply: Follow a report from test output to the deployed Pages URL and check it for secrets, private data, and broken links.
+- Learning check: Explain the deployment trigger, required permissions, published artifact, and how you verified the public URL.
 
 **Work:**
 
@@ -317,6 +430,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 
 **Objective:** Make the repository understandable within a one-minute scan.
 
+**Learning focus:** Technical communication, information architecture, concise documentation, and evidence-backed claims.
+
+**Reading guide:**
+
+- Primary: GitHub's [README guidance](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories) and documentation style recommendations.
+- Reference: Write the Docs' [documentation guide](https://www.writethedocs.org/guide/).
+- Apply: Ask whether a new reader can understand the purpose, setup, current status, architecture, and evidence within one minute.
+- Learning check: Identify every externally verifiable claim in the README and point to its repository or CI evidence.
+
 **Work:**
 
 - Add purpose, status badges, architecture, quality strategy, and quick start.
@@ -337,6 +459,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 #### Week 14 - Documentation Polish and Release
 
 **Objective:** Produce a coherent, versioned portfolio release.
+
+**Learning focus:** Documentation review, release management, reproducibility, and technical diagrams.
+
+**Reading guide:**
+
+- Primary: GitHub documentation on [release management](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) and [semantic versioning](https://semver.org/).
+- Reference: C4 model guidance on [software architecture diagrams](https://c4model.com/diagrams).
+- Apply: Compare the architecture diagram, source tree, release notes, and generated artifacts for consistency.
+- Learning check: Reproduce the release package from a clean checkout and explain what the version communicates.
 
 **Work:**
 
@@ -360,6 +491,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 
 **Objective:** Turn technical work into concise professional evidence.
 
+**Learning focus:** Professional technical writing, portfolio storytelling, trace analysis, and responsible evidence sharing.
+
+**Reading guide:**
+
+- Primary: Playwright documentation on [Trace Viewer](https://playwright.dev/docs/trace-viewer).
+- Reference: GitHub's [writing on GitHub](https://docs.github.com/en/get-started/writing-on-github) and OWASP guidance on [data protection](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html).
+- Apply: Turn one verified trace and one repository outcome into concise CV and LinkedIn language without overstating coverage or reliability.
+- Learning check: Distinguish a measurable project outcome from a claim that still needs evidence, and redact sensitive trace content.
+
 **Work:**
 
 - Write a CV-ready project description using concrete outcomes.
@@ -380,6 +520,15 @@ The portfolio combines manual QA, risk-based testing, JavaScript and Playwright 
 #### Week 16 - LIA Outreach
 
 **Objective:** Contact relevant QA decision-makers with specific, evidence-based value.
+
+**Learning focus:** Employer research, professional communication, data minimization, and follow-up planning.
+
+**Reading guide:**
+
+- Primary: Swedish Authority for Privacy Protection (IMY) guidance on [personal data](https://www.imy.se/en/organisations/data-protection/).
+- Reference: Harvard Business Review's [networking message guidance](https://hbr.org/2016/11/how-to-write-a-networking-email-that-gets-a-response) and the target employers' own careers pages.
+- Apply: Build a research-backed contact list and write messages that connect a specific employer need to verified portfolio evidence.
+- Learning check: Explain why each target is relevant, what data-minimization considerations apply, and when to follow up.
 
 **Work:**
 
