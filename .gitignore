@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Playwright output
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Local environment and operating system files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+
+# Local editor files
+.vscode/
+.idea/
+
+# Temporary files
+*.log
+*.tmp
