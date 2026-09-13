@@ -26,7 +26,17 @@ For each week:
 3. Apply at least one principle to the week's SauceDemo task.
 4. Check the learning outcome before marking the week complete.
 
-Use stable, authoritative sources where possible: the [ISTQB glossary](https://glossary.istqb.org/), [ISTQB Foundation Level syllabus](https://istqb.org/certifications/certified-tester-foundation-level), [MDN Web Docs](https://developer.mozilla.org/), [Playwright documentation](https://playwright.dev/docs/intro), and official GitHub documentation. Record the title, URL, and access date for sources that materially influenced a deliverable.
+Use stable, authoritative sources where possible: the [ISTQB glossary](https://glossary.istqb.org/), [ISTQB Foundation Level syllabus](https://istqb.org/certifications/certified-tester-foundation-level), [Test Automation University](https://testautomationu.applitools.com/), [MDN Web Docs](https://developer.mozilla.org/), [Playwright documentation](https://playwright.dev/docs/intro), and official GitHub documentation. Record the title, URL, and access date for sources that materially influenced a deliverable.
+
+### Test Automation University Path
+
+Test Automation University (TAU) is a free, course-based complement to the reference reading. Do not complete every TAU course before progressing. Select the course listed for the current milestone, complete only the modules needed for that week's work, and apply the result to SauceDemo. The suggested sequence is:
+
+1. [Setting a Foundation for Successful Test Automation](https://testautomationu.applitools.com/setting-a-foundation-for-successful-test-automation/) - automation strategy, maintainability, and return on investment.
+2. [Introduction to JavaScript](https://testautomationu.applitools.com/javascript-tutorial/) - the language fundamentals needed for the Playwright project.
+3. [TAU course catalog](https://testautomationu.applitools.com/) - select the current Playwright, API, CI/CD, or supporting course when the relevant implementation week begins.
+
+TAU course availability and URLs can change. If a course moves, use the catalog to locate its current page and record the actual course completed.
 
 ## Phase Overview
 
@@ -51,6 +61,7 @@ Use stable, authoritative sources where possible: the [ISTQB glossary](https://g
 
 - Primary: ISTQB Foundation Level syllabus sections on testing fundamentals, test activities, and risk-based testing.
 - Reference: ISTQB glossary entries for *risk*, *risk-based testing*, *test strategy*, *entry criteria*, and *exit criteria*.
+- TAU: Complete the relevant modules from [Setting a Foundation for Successful Test Automation](https://testautomationu.applitools.com/setting-a-foundation-for-successful-test-automation/) on automation strategy and ROI.
 - Apply: Compare the business impact of a failed checkout with a failed product sort and use the comparison to justify the risk matrix.
 - Learning check: Explain why probability and impact are scored separately and when testing may start or stop.
 
@@ -188,6 +199,7 @@ Use stable, authoritative sources where possible: the [ISTQB glossary](https://g
 
 - Primary: Playwright documentation on [installation](https://playwright.dev/docs/intro) and [test configuration](https://playwright.dev/docs/test-configuration).
 - Reference: npm documentation on [package.json](https://docs.npmjs.com/cli/v10/configuring-npm/package-json) and Playwright's [reporters](https://playwright.dev/docs/test-reporters).
+- TAU: Complete the relevant modules from [Introduction to JavaScript](https://testautomationu.applitools.com/javascript-tutorial/) on variables, functions, objects, arrays, modules, and asynchronous JavaScript.
 - Apply: Explain what each configuration option protects against and verify the project from a clean install.
 - Learning check: Describe the purpose of each browser project, reporter, and failure artifact setting.
 
@@ -219,6 +231,7 @@ Use stable, authoritative sources where possible: the [ISTQB glossary](https://g
 
 - Primary: Playwright documentation on [locators](https://playwright.dev/docs/locators), [writing tests](https://playwright.dev/docs/writing-tests), and [actionability](https://playwright.dev/docs/actionability).
 - Reference: MDN guidance on [accessible names](https://developer.mozilla.org/en-US/docs/Glossary/Accessible_name) and [web forms](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms).
+- TAU: Use the [TAU course catalog](https://testautomationu.applitools.com/) to select the current Playwright or browser-automation course, completing only the locator and first-test modules relevant to this milestone.
 - Apply: Replace generated selectors with role- and label-based locators and assert observable page behavior.
 - Learning check: Explain why a chosen locator is resilient and why a web-first assertion is preferable to a fixed delay.
 
@@ -248,6 +261,7 @@ Use stable, authoritative sources where possible: the [ISTQB glossary](https://g
 
 - Primary: Playwright documentation on [page object models](https://playwright.dev/docs/pom).
 - Reference: Martin Fowler's [PageObject](https://martinfowler.com/bliki/PageObject.html) and the [single-responsibility principle](https://www.oodesign.com/single-responsibility-principle).
+- TAU: Use the [TAU course catalog](https://testautomationu.applitools.com/) to select the current Playwright or test-automation design course and compare its page-object examples with this project's structure.
 - Apply: Move login and inventory interactions into page objects while keeping business assertions in the tests.
 - Learning check: Identify which responsibility belongs in a page object, fixture, or test and explain why.
 
@@ -278,6 +292,7 @@ Use stable, authoritative sources where possible: the [ISTQB glossary](https://g
 
 - Primary: Playwright documentation on [fixtures](https://playwright.dev/docs/test-fixtures) and [parameterized tests](https://playwright.dev/docs/test-parameterize).
 - Reference: OWASP [Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html).
+- TAU: Use the [TAU course catalog](https://testautomationu.applitools.com/) to select the current course covering test data, fixtures, or data-driven automation.
 - Apply: Inject page objects through a custom fixture and load non-secret user scenarios from test data.
 - Learning check: Explain the fixture lifecycle and demonstrate that no secret or environment-specific credential is hard-coded in a test.
 
@@ -309,6 +324,7 @@ Use stable, authoritative sources where possible: the [ISTQB glossary](https://g
 
 - Primary: Playwright documentation on [network](https://playwright.dev/docs/network), [mock APIs](https://playwright.dev/docs/mock), and [auto-waiting](https://playwright.dev/docs/actionability).
 - Reference: Martin Fowler's [Eradicating Non-Determinism in Tests](https://martinfowler.com/articles/nonDeterminism.html).
+- TAU: Use the [TAU course catalog](https://testautomationu.applitools.com/) to select the current course covering API or network testing when this milestone is reached.
 - Apply: Block product image requests and assert that inventory remains usable without using `waitForTimeout`.
 - Learning check: Distinguish a deterministic synchronization point from a timing guess and explain what user-visible behavior the test protects.
 
@@ -372,6 +388,7 @@ Use stable, authoritative sources where possible: the [ISTQB glossary](https://g
 
 - Primary: GitHub Actions documentation on [workflow syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) and [storing workflow data as artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts).
 - Reference: Playwright's [continuous integration guide](https://playwright.dev/docs/ci).
+- TAU: Use the [TAU course catalog](https://testautomationu.applitools.com/) to select the current CI/CD course and map its pipeline concepts to this workflow.
 - Apply: Trace every workflow step from checkout through browser installation, test execution, and artifact upload.
 - Learning check: Explain why failures must fail the job while reports and failure evidence still upload with `if: always()`.
 
