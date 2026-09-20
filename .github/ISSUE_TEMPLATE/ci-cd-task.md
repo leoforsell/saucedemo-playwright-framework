@@ -18,7 +18,7 @@ labels: ci-cd
 ## Acceptance Criteria
 
 - [ ] The workflow is valid and readable.
-- [ ] A failing test fails the validation job unless publication explicitly permits continuation.
+- [ ] A failing test fails the validation job; artifact upload or publication never masks that failure.
 - [ ] Reports and failure artifacts are retained with appropriate conditions.
 - [ ] No credentials or private data are exposed.
 
@@ -32,3 +32,4 @@ labels: ci-cd
 
 - Known limitation:
 - Follow-up issue:
+

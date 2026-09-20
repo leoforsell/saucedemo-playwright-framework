@@ -8,7 +8,7 @@
 | Owner | Portfolio author |
 | System under test | SauceDemo e-commerce sandbox |
 | Version | 0.1.0 |
-| Last updated | 2026-09-12 |
+| Last updated | 2026-09-20 |
 
 ## 1. Purpose
 
@@ -55,15 +55,17 @@ Use a risk-based combination of:
 
 ## 5. Exit Criteria
 
-- Ten planned test cases have an execution status.
+- All cases selected for the cycle have an execution status (ten baseline cases plus approved additions).
 - Critical and major defects are documented and triaged.
 - Residual risk is summarized.
 - Required evidence is linked from the execution summary.
-- A Go, No-Go, or Conditional Release decision is justified.
+- A simulated Go, No-Go, or Conditional Release decision follows the gates in [Evidence Standard](EVIDENCE_STANDARD.md); insufficient evidence cannot support Go.
 
 ## 6. Risk Scoring
 
 Risk score = probability of failure (1-3) multiplied by business impact (1-3).
+
+Probability: 1 = simple path with no known failure evidence; 2 = several state transitions or validation rules; 3 = observed recurring failures or especially complex behavior. Impact: 1 = cosmetic inconvenience; 2 = degraded shopping with a workaround; 3 = blocked purchase or incorrect order/session state. Initial values below are planning judgments, not measured failure rates; review them after exploration.
 
 | Score | Interpretation | Suggested response |
 | ---: | --- | --- |
@@ -75,13 +77,13 @@ Risk score = probability of failure (1-3) multiplied by business impact (1-3).
 
 | ID | Module / Function | Potential failure | Probability (1-3) | Impact (1-3) | Score | Mitigation | Status |
 | --- | --- | --- | ---: | ---: | ---: | --- | --- |
-| R-01 | Authentication | Valid customers cannot sign in |  |  |  | Positive and negative login tests | Open |
-| R-02 | Inventory | Products or prices are displayed incorrectly |  |  |  | Inventory content and sorting checks | Open |
-| R-03 | Sorting | Products are ordered incorrectly |  |  |  | Verify all supported sort options | Open |
-| R-04 | Cart | Items, quantities, or totals are incorrect |  |  |  | Add, remove, and total verification | Open |
-| R-05 | Checkout | Required customer data is accepted incorrectly |  |  |  | Boundary and empty-field validation | Open |
-| R-06 | Order confirmation | A completed order has no reliable confirmation |  |  |  | End-to-end confirmation test | Open |
-| R-07 | Logout | Session remains active after logout |  |  |  | Logout and back-navigation checks | Open |
+| R-01 | Authentication | Valid customers cannot sign in | 2 | 3 | 6 | Positive and negative login tests | Open |
+| R-02 | Inventory | Products or prices are displayed incorrectly | 2 | 2 | 4 | Inventory content and sorting checks | Open |
+| R-03 | Sorting | Products are ordered incorrectly | 2 | 1 | 2 | Verify all supported sort options | Open |
+| R-04 | Cart | Items, quantities, or totals are incorrect | 2 | 3 | 6 | Add, remove, and total verification | Open |
+| R-05 | Checkout | Required customer data is accepted incorrectly | 2 | 3 | 6 | Required-field and invalid-partition validation | Open |
+| R-06 | Order confirmation | A completed order has no reliable confirmation | 2 | 3 | 6 | End-to-end confirmation test | Open |
+| R-07 | Logout | Session remains active after logout | 2 | 3 | 6 | Logout and back-navigation checks | Open |
 
 ## 8. Assumptions and Constraints
 
@@ -95,3 +97,4 @@ Risk score = probability of failure (1-3) multiplied by business impact (1-3).
 | Reviewer | Date | Outcome | Notes |
 | --- | --- | --- | --- |
 | Pending | Pending | Pending | Review after Week 1 execution |
+

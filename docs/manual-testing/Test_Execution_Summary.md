@@ -1,56 +1,47 @@
-# QA Execution Summary and Release Recommendation
+# QA execution summary and release recommendation
 
-## Document Control
+**Status: template, pending execution.** This is a simulated release assessment for the portfolio.
 
-| Field | Value |
-| --- | --- |
-| Status | Draft |
-| Test cycle | SauceDemo portfolio baseline |
-| Planned cases | 10 |
-| Execution environment | Pending |
-| Execution date | Pending |
+- Cycle ID / dates / owner: Pending
+- Repository commit / target URL / browser versions / OS: Pending
+- Scope: 11 designed cases (ten baseline cases plus TC-AUTH-003); confirm the selected cycle before executing.
+- Detailed run records: None yet
 
-## 1. Execution Results
+## Baseline results
 
 | Metric | Count |
 | --- | ---: |
-| Total planned | 10 |
-| Passed | Pending |
-| Failed | Pending |
-| Blocked | Pending |
-| Not run | Pending |
+| Total selected | 11 |
+| Passed | 0 |
+| Failed | 0 |
+| Blocked | 0 |
+| Not run | 11 |
 
-## 2. Results by Test Case
+Execution completion: 0/11 (0%). Pass rate among conclusive results: N/A (none executed). These counts describe the unexecuted template, not an application test run.
 
-| Test ID | Result | Defect ID | Evidence | Notes |
+## Results by case
+
+| Case | Result | Execution record | Defect | Evidence |
 | --- | --- | --- | --- | --- |
-| TC-AUTH-001 | Pending | None | Pending | |
-| TC-AUTH-002 | Pending | Pending | Pending | |
-| TC-INV-001 | Pending | Pending | Pending | |
-| TC-INV-002 | Pending | Pending | Pending | |
-| TC-CART-001 | Pending | Pending | Pending | |
-| TC-CART-002 | Pending | Pending | Pending | |
-| TC-CHK-001 | Pending | Pending | Pending | |
-| TC-CHK-002 | Pending | Pending | Pending | |
-| TC-ORD-001 | Pending | Pending | Pending | |
-| TC-LOG-001 | Pending | Pending | Pending | |
+| TC-AUTH-001 | Not run | None | Not assessed | None |
+| TC-AUTH-002 | Not run | None | Not assessed | None |
+| TC-AUTH-003 | Not run | None | Not assessed | None |
+| TC-INV-001 | Not run | None | Not assessed | None |
+| TC-INV-002 | Not run | None | Not assessed | None |
+| TC-CART-001 | Not run | None | Not assessed | None |
+| TC-CART-002 | Not run | None | Not assessed | None |
+| TC-CHK-001 | Not run | None | Not assessed | None |
+| TC-CHK-002 | Not run | None | Not assessed | None |
+| TC-ORD-001 | Not run | None | Not assessed | None |
+| TC-LOG-001 | Not run | None | Not assessed | None |
 
-## 3. Critical Deviations and Residual Risk
+## Residual risks and recommendation
 
-- BUG-001: Pending reproduction and impact assessment.
-- BUG-002: Pending reproduction and impact assessment.
-- BUG-003: Pending reproduction and impact assessment.
-- Residual risk: Pending review after execution.
+- Open confirmed defects: none recorded; this does not imply a defect-free application.
+- Unassessed risks: all seven strategy risks until execution evidence is available.
+- Decision: **Pending execution**.
+- Decision owner / date / reviewer: Pending.
+- Rationale and accepted limitations: fill after execution using the [decision gates](EVIDENCE_STANDARD.md).
+- Follow-up actions and owners: Pending.
 
-## 4. Release Recommendation
-
-- **Decision:** Pending execution
-- **Recommendation owner:** Portfolio author
-- **Rationale:** A Go, No-Go, or Conditional Release decision must be based on the completed execution record, unresolved defect risk, and agreed exit criteria. No release claim is made from this template alone.
-
-## 5. Sign-off
-
-| Role | Name | Decision | Date | Signature or link |
-| --- | --- | --- | --- | --- |
-| QA / Test owner | Pending | Pending | Pending | Pending |
-| Product or reviewer | Pending | Pending | Pending | Pending |
+Keep the counts consistent with the selected cycle; explain added, excluded, blocked, or unexecuted cases. Cite the relevant run rather than overwriting historical results.

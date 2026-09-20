@@ -40,8 +40,9 @@ labels: planning
 
 ## Status
 
-- [ ] Planned
-- [ ] In progress
-- [ ] Ready for review
-- [ ] Complete
-- [ ] Blocked
+- Evidence maturity: Planned / In progress / Verified / Published
+- Work state: Todo / Doing / Review / Done / Blocked
+- If blocked: reason and next action
+
+Mark Done only when the acceptance criteria and review are complete. Blocked is a work state, not an evidence claim.
+
