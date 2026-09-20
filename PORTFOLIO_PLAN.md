@@ -2,552 +2,615 @@
 
 ## Purpose
 
-This 16-week plan builds a practical, recruiter-ready portfolio for QA engineering and test automation roles. The system under test is the [SauceDemo e-commerce sandbox](https://www.saucedemo.com/). The plan assumes approximately 12 hours of focused work per week.
+This 16-week plan builds an evidence-based portfolio for entry-level QA, software testing, and test automation opportunities. The system under test is the [SauceDemo e-commerce sandbox](https://www.saucedemo.com/). The plan assumes approximately 12 focused hours per week and is designed to be reviewed with an IT mentor, including at Misa IT.
 
-The portfolio combines manual QA, risk-based testing, JavaScript and Playwright automation, Page Object Model design, CI/CD, reporting, release evidence, and targeted LIA outreach in the Stockholm region.
+The plan deliberately produces a small working vertical slice early. By the end of Week 2, the repository should contain:
 
-## Working Principles
+- a prioritized risk assessment;
+- at least two executed manual test cases;
+- automated successful and unsuccessful login tests;
+- a reproducible Playwright setup; and
+- a successful GitHub Actions run.
 
-- Use risk to decide what to test and automate first.
-- Keep exploratory findings separate from assumptions until they are reproduced.
-- Prefer accessible, user-facing locators and web-first assertions.
-- Keep test data, page objects, test logic, and reporting concerns separate.
-- Treat Markdown as the source of truth and generated PDFs, screenshots, traces, and HTML reports as evidence.
-- Do not claim a test result, defect, release, or live report until evidence exists in the repository or CI.
+Everything after that point expands, hardens, and explains working evidence. The goal is not to appear finished early; it is to demonstrate steady, traceable progress from risk to test evidence.
 
-## How to Use the Reading Guides
+## Portfolio Outcomes
 
-Each week combines a small amount of reading with hands-on work. Read the suggested material before starting the week's implementation, apply the ideas to SauceDemo, and record a short reflection in the related artifact or issue. The goal is not to finish a large reading list; it is to explain which principle you applied and show evidence of the result.
+By Week 16, a reviewer should be able to verify:
 
-For each week:
+1. **QA analysis:** risks, scope, test strategy, designed cases, exploratory sessions, and a release recommendation.
+2. **Automation:** maintainable Playwright tests for authentication, inventory, cart, and checkout behavior.
+3. **Engineering workflow:** focused issues, short-lived branches, complete pull requests, reviewable commits, and automated checks.
+4. **Test evidence:** CI runs, reports, traces, screenshots, and documented limitations.
+5. **Professional communication:** a clear README, an honest project description, a versioned release, and a targeted practice-placement plan.
 
-1. Read the primary source and skim the optional source if time permits.
-2. Write down three principles, terms, or techniques in your own words.
-3. Apply at least one principle to the week's SauceDemo task.
-4. Check the learning outcome before marking the week complete.
+## Scope and Capacity
 
-Use stable, authoritative sources where possible: the [ISTQB glossary](https://glossary.istqb.org/), [ISTQB Foundation Level syllabus](https://istqb.org/certifications/certified-tester-foundation-level), [MDN Web Docs](https://developer.mozilla.org/), [Playwright documentation](https://playwright.dev/docs/intro), and official GitHub documentation. Record the title, URL, and access date for sources that materially influenced a deliverable.
+Use the following weekly time box as a guide:
+
+| Activity | Target time |
+| --- | ---: |
+| Plan and focused reading | 1 hour |
+| Testing or implementation | 7 hours |
+| Documentation and evidence | 2 hours |
+| Review, feedback, and buffer | 2 hours |
+
+If work exceeds the weekly time box, finish the core Definition of Done and move stretch work to the backlog. Do not reduce evidence quality to preserve the calendar.
+
+### Core scope
+
+- Desktop Chromium as the first supported browser.
+- Authentication, inventory, cart, and checkout as the main user journey.
+- Manual QA documentation plus focused Playwright UI automation.
+- GitHub Actions and a public, privacy-reviewed report.
+
+### Stretch scope
+
+- Firefox, WebKit, and mobile projects after Chromium is stable.
+- Broader accessibility checks.
+- API testing with Playwright or Python/`pytest` if mentor support and time allow.
+- TypeScript migration after the JavaScript suite is stable.
+
+Stretch work must not block the core portfolio.
+
+## Evidence and Status Rules
+
+Use these labels consistently in the README, issues, and portfolio documents:
+
+| Status | Meaning |
+| --- | --- |
+| Planned | No implementation or verified artifact exists yet. |
+| In progress | Work exists but the Definition of Done is not complete. |
+| Verified | The work has been executed, reviewed, and linked to evidence. |
+| Published | Verified evidence is available at a stable public URL or release. |
+
+- Do not claim a test result, defect, release, coverage level, framework feature, or live report until the evidence exists.
+- Use `Built`, `Implemented`, or `Achieved` only for verified work. Use `Planned`, `Designing`, or `Currently implementing` for future work.
+- Keep Markdown source files as the source of truth. Treat PDFs, screenshots, traces, videos, and HTML reports as generated evidence.
+- Record limitations and failed experiments; they demonstrate engineering judgment when explained clearly.
+- Review screenshots, traces, reports, and logs for credentials or personal data before publishing them.
+
+## GitHub Working Method
+
+Use one lightweight workflow throughout the project:
+
+1. Create or update one focused GitHub issue with acceptance criteria.
+2. Create a short-lived branch from `main`, such as `docs/week-01-risk-analysis` or `feat/week-02-auth-tests`.
+3. Make small Conventional Commits that describe completed changes.
+4. Open a pull request to `main` and complete its checklist.
+5. Link validation output and relevant evidence in the pull request.
+6. Use `Relates to #N` for partial work. Use `Closes #N` only when the complete issue Definition of Done is satisfied.
+7. Merge only after the change is reviewable and required checks pass.
+
+A separate `develop` branch is not required for this solo portfolio. The `main` branch should remain demonstrable, and unfinished work should live on short-lived branches.
+
+## Learning Method
+
+Use just-in-time reading instead of treating reading as a separate course:
+
+1. Read one primary source relevant to the current task.
+2. Record up to three ideas in your own words.
+3. Apply at least one idea to a SauceDemo artifact or test.
+4. Explain the decision in the issue or pull request.
+
+Prefer stable, authoritative sources:
+
+- [ISTQB Foundation Level syllabus](https://istqb.org/certifications/certified-tester-foundation-level) and [ISTQB glossary](https://glossary.istqb.org/)
+- [Playwright documentation](https://playwright.dev/docs/intro)
+- [MDN Web Docs](https://developer.mozilla.org/)
+- [GitHub documentation](https://docs.github.com/)
+- [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/)
+
+Record the title, URL, and access date only when a source materially influences a deliverable.
 
 ## Phase Overview
 
 | Phase | Weeks | Focus | Primary outcome |
 | --- | ---: | --- | --- |
-| 1 | 1-4 | Manual QA foundation | Test strategy, traceable cases, defects, and release recommendation |
-| 2 | 5-9 | Playwright automation | Maintainable JavaScript framework with POM, fixtures, and network testing |
-| 3 | 10-12 | Git, CI/CD, and reporting | Reproducible workflows and published test evidence |
-| 4 | 13-16 | Portfolio packaging and outreach | Recruiter-ready repository, release package, and LIA outreach |
+| 1 | 1-4 | Risk, first tests, and manual evidence | An early working slice plus a defensible release recommendation |
+| 2 | 5-9 | Automation growth and reliability | A maintainable core suite with stable test architecture |
+| 3 | 10-12 | Repository quality, CI, and reporting | Reproducible checks and reviewable published evidence |
+| 4 | 13-16 | Portfolio packaging and practice outreach | An honest, reviewer-friendly portfolio and targeted next step |
 
 ## Weekly Milestones
 
-### Phase 1: Manual QA Foundation
+### Phase 1: Risk, First Tests, and Manual Evidence
 
-#### Week 1 - Test Strategy and Risk Analysis
+#### Week 1 - Risk Analysis and Priority Test Design
 
-**Objective:** Establish scope, business risks, test levels, and release criteria before writing automation.
+**Objective:** Decide what matters most before expanding documentation or automation.
 
-**Learning focus:** Testing fundamentals, test activities, risk management, the test pyramid, and automation ROI.
+**Learning focus:** Risk-based testing, scope, entry and exit criteria, equivalence partitioning, and boundary value analysis.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: ISTQB Foundation Level syllabus sections on testing fundamentals, test activities, and risk-based testing.
-- Reference: ISTQB glossary entries for *risk*, *risk-based testing*, *test strategy*, *entry criteria*, and *exit criteria*.
-- Apply: Compare the business impact of a failed checkout with a failed product sort and use the comparison to justify the risk matrix.
-- Learning check: Explain why probability and impact are scored separately and when testing may start or stop.
+- Execute one standard purchase manually to understand the product.
+- Complete the existing risk matrix for authentication, inventory, sorting, cart, checkout, confirmation, and logout.
+- Score probability and impact separately on a documented 1-3 scale.
+- Review the existing ten test cases and correct their technique labels.
+- Ensure at least two cases are genuine negative or boundary scenarios.
+- Execute and record the two highest-priority cases.
 
-**Work:**
-
-- Execute a manual standard purchase with `standard_user` / `secret_sauce`.
-- Identify at least six modules: authentication, inventory, sorting, cart, checkout, order confirmation, and logout.
-- Score each risk as probability (1-3) multiplied by business impact (1-3).
-- Define in-scope and out-of-scope areas, entry criteria, exit criteria, and assumptions.
-
-**Deliverables:**
+**Required deliverables:**
 
 - `docs/manual-testing/Test_Strategy_SauceDemo.md`
-- GitHub issue linked to `Week 01 - Test Strategy and Risk Analysis`
-
-**Definition of Done:**
-
-- [ ] At least six modules are risk assessed.
-- [ ] Every risk has probability, impact, risk score, and mitigation.
-- [ ] Entry and exit criteria are explicit.
-- [ ] Scope and assumptions are reviewable by another person.
-
-**Acceptance evidence:** Completed risk matrix and a recorded manual purchase flow.
-
-#### Week 2 - Test Case Design and Traceability
-
-**Objective:** Produce a compact, traceable regression set using black-box test design.
-
-**Learning focus:** Equivalence partitioning, boundary value analysis, user stories, and Given/When/Then acceptance criteria.
-
-**Reading guide:**
-
-- Primary: ISTQB Foundation Level syllabus sections on test techniques and test analysis.
-- Reference: Martin Fowler's [Specification by Example](https://martinfowler.com/bliki/SpecificationByExample.html) overview and the [Cucumber Gherkin reference](https://cucumber.io/docs/gherkin/reference).
-- Apply: Derive partitions and boundaries for login, cart quantity, and checkout fields before writing the ten cases.
-- Learning check: Justify why every test case exists, which risk it covers, and which partition or boundary it represents.
-
-**Work:**
-
-- Write ten formal test cases with unique IDs.
-- Cover login, inventory, sorting, cart additions/removals, checkout, and order completion.
-- Include at least two negative or boundary cases.
-- Map each case to a user story and risk area.
-
-**Deliverables:**
-
 - `docs/manual-testing/Test_Cases_Matrix.md`
 
 **Definition of Done:**
 
-- [ ] Ten complete test cases are documented.
-- [ ] At least two negative or boundary cases are included.
-- [ ] Preconditions, data, steps, and expected results are testable.
-- [ ] Each case maps to a user story and risk area.
+- [ ] At least six risk areas have probability, impact, score, and mitigation.
+- [ ] Scope, assumptions, entry criteria, and exit criteria are explicit.
+- [ ] Every test case maps to a risk or user story.
+- [ ] Two priority cases have dated execution results and evidence references.
+- [ ] Test technique labels match the actual test design.
 
-**Acceptance evidence:** Traceability table with no orphaned test cases or user stories.
+**Acceptance evidence:** Risk matrix, reviewed traceability table, and two manual execution records.
 
-#### Week 3 - Exploratory Testing and Defect Management
+#### Week 2 - First Working Vertical Slice
 
-**Objective:** Investigate behavior beyond the happy path and report reproducible defects professionally.
+**Objective:** Turn the plan into running code and visible CI evidence as early as possible.
 
-**Learning focus:** Exploratory testing, defect lifecycle, severity versus priority, and evidence-based reporting.
+**Learning focus:** Node.js project setup, Playwright fundamentals, accessible locators, web-first assertions, and basic CI.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: ISTQB Foundation Level syllabus sections on defect management and experience-based testing.
-- Reference: James Bach's [Exploratory Testing Explained](https://www.satisfice.com/articles/et-article) and Atlassian's [bug report guidance](https://www.atlassian.com/software/jira/guides/bug-reporting).
-- Apply: Create a time-boxed charter for each exploratory session and separate observations from confirmed defects.
-- Learning check: Explain the difference between severity and priority and reproduce one finding from a clean session record.
+- Initialize Node.js and Playwright in JavaScript.
+- Configure Chromium, the HTML reporter, traces on first retry, and screenshots on failure.
+- Automate successful login and rejected invalid login.
+- Prefer `getByRole()`, `getByLabel()`, or `getByPlaceholder()` over brittle selectors.
+- Add a minimal GitHub Actions workflow using `npm ci` and Chromium.
+- Verify the project from a clean install.
 
-**Work:**
+**Required deliverables:**
 
-- Run exploratory sessions with `problem_user` and `performance_glitch_user`.
-- Monitor browser console and network activity.
-- Capture reproducible observations, screenshots, and relevant console excerpts.
-- Document three defects only after confirming their actual behavior.
+- `package.json` and lockfile
+- `playwright.config.js`
+- `tests/e2e/auth.spec.js`
+- `.github/workflows/playwright.yml`
+- `.gitignore`
 
-**Deliverables:**
+**Definition of Done:**
 
+- [ ] `npm ci` succeeds from a clean checkout.
+- [ ] Both authentication tests pass locally in Chromium.
+- [ ] No fixed waits, XPath, or CSS-class selectors are used in the login tests.
+- [ ] GitHub Actions completes successfully on the pull request.
+- [ ] Reports, dependencies, and generated artifacts are ignored by Git.
+
+**Acceptance evidence:** Green workflow URL, local test output, and a short locator rationale in the pull request.
+
+#### Week 3 - Exploratory Testing and Defect Evidence
+
+**Objective:** Investigate behavior beyond scripted happy paths and produce reproducible findings.
+
+**Learning focus:** Session-based exploratory testing, defect lifecycle, severity versus priority, and evidence quality.
+
+**Core work:**
+
+- Run two time-boxed exploratory sessions using `problem_user` and `performance_glitch_user`.
+- Give each session a charter, notes, start/end time, and observed risks.
+- Inspect relevant browser console and network behavior.
+- Reproduce candidate defects in a clean session before classifying them as defects.
+- Document up to three verified defects; keep unconfirmed observations separate.
+
+**Required deliverables:**
+
+- `docs/manual-testing/Exploratory_Sessions.md`
 - `docs/manual-testing/Bug_Reports.md`
 - `docs/manual-testing/screenshots/`
 
 **Definition of Done:**
 
-- [ ] Exploratory sessions have charters, notes, and time boxes.
-- [ ] Three defects have clear reproduction steps.
+- [ ] Two sessions have a charter, time box, notes, and conclusion.
+- [ ] Every reported defect has reproducible steps, expected and actual results, environment, severity, priority, and evidence.
 - [ ] Severity and priority are justified independently.
-- [ ] Each defect has expected and actual results plus evidence references.
+- [ ] Observations that cannot be reproduced are not presented as confirmed defects.
 
-**Acceptance evidence:** Reproducible defect reports reviewed for clarity and completeness.
+**Acceptance evidence:** Session records and reproducible defect reports reviewed for clarity.
 
-#### Week 4 - Test Execution Summary and Release Recommendation
+#### Week 4 - Manual Execution and Release Recommendation
 
-**Objective:** Turn the first three weeks of evidence into a formal release decision.
+**Objective:** Use accumulated evidence to make a defensible release decision.
 
-**Learning focus:** Test monitoring, test completion, reporting, and Go/No-Go decision-making.
+**Learning focus:** Test execution, test completion, residual risk, and Go/No-Go decision-making.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: ISTQB Foundation Level syllabus sections on test monitoring, control, completion, and reporting.
-- Reference: ISTQB glossary entries for *residual risk*, *release decision*, and *test summary report*.
-- Apply: Use the ten execution results and unresolved risks to make a justified Go, No-Go, or Conditional Release recommendation.
-- Learning check: Defend the release recommendation using evidence, coverage, known defects, and residual risk rather than intuition.
-
-**Work:**
-
-- Execute the ten documented cases and record pass, fail, and blocked results.
-- Summarize coverage, unresolved defects, residual risk, and limitations.
+- Execute all ten documented cases and record pass, fail, or blocked status.
+- Link failed cases to verified defect reports.
+- Summarize coverage, limitations, unresolved defects, and residual risks.
 - Make a Go, No-Go, or Conditional Release recommendation.
-- Generate a PDF package only from reviewed Markdown source.
+- Generate a PDF only after the Markdown sources are reviewed.
 
-**Deliverables:**
+**Required deliverables:**
 
 - `docs/manual-testing/Test_Execution_Summary.md`
-- `docs/manual-testing/QA_Test_Plan_SauceDemo.pdf` (generated artifact)
+- `docs/manual-testing/QA_Test_Plan_SauceDemo.pdf`
 
 **Definition of Done:**
 
-- [ ] All ten cases have an execution status.
-- [ ] Defect impact and residual risk are summarized.
-- [ ] The release recommendation is explicitly justified.
-- [ ] The generated PDF matches the reviewed source documents.
+- [ ] All ten cases have a dated status and environment.
+- [ ] Results can be traced to cases, risks, and defects.
+- [ ] The recommendation follows from the evidence and stated exit criteria.
+- [ ] The PDF matches the reviewed Markdown source.
 
-**Acceptance evidence:** Signed execution summary and versioned PDF package.
+**Acceptance evidence:** Reviewed summary, result links, and versioned PDF artifact.
 
-### Phase 2: Playwright Automation
+### Phase 2: Automation Growth and Reliability
 
-#### Week 5 - Playwright Project Setup
+#### Week 5 - Page Object Model After Working Tests
 
-**Objective:** Establish a reproducible JavaScript test project with cross-browser configuration.
+**Objective:** Improve maintainability without hiding test intent or over-engineering the first suite.
 
-**Learning focus:** Node.js project structure, Playwright configuration, browser projects, reporters, and reproducible setup.
+**Learning focus:** Cohesion, coupling, Page Object Model design, and separation of concerns.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: Playwright documentation on [installation](https://playwright.dev/docs/intro) and [test configuration](https://playwright.dev/docs/test-configuration).
-- Reference: npm documentation on [package.json](https://docs.npmjs.com/cli/v10/configuring-npm/package-json) and Playwright's [reporters](https://playwright.dev/docs/test-reporters).
-- Apply: Explain what each configuration option protects against and verify the project from a clean install.
-- Learning check: Describe the purpose of each browser project, reporter, and failure artifact setting.
+- Review the Week 2 tests and identify actual duplication.
+- Implement `LoginPage` and `InventoryPage`; add `BasePage` only if it contains proven shared behavior.
+- Move reusable interactions and locators into page objects.
+- Keep business assertions visible in test files unless a reusable page-state assertion is justified.
+- Refactor both authentication tests without changing their behavior.
 
-**Work:**
+**Required deliverables:**
 
-- Initialize Node.js and Playwright.
-- Configure Chromium, Firefox, WebKit, and mobile Chrome projects.
-- Enable HTML and list reporters, trace-on-first-retry, failure screenshots, and failure video.
-- Add formatting, linting, and repository ignore rules.
-
-**Deliverables:** `package.json`, `playwright.config.js`, `.eslintrc.json`, `.prettierrc`
+- `pages/LoginPage.js`
+- `pages/InventoryPage.js`
+- Optional `pages/BasePage.js` with documented justification
 
 **Definition of Done:**
 
-- [ ] Dependencies install with `npm ci`.
-- [ ] All four browser profiles are configured.
-- [ ] `npx playwright test` starts without configuration errors.
-- [ ] Generated reports and test artifacts are ignored by Git.
+- [ ] Both Week 2 tests still pass locally and in CI.
+- [ ] Page-object methods describe user actions rather than low-level clicks.
+- [ ] Test intent remains understandable from the spec file.
+- [ ] No abstraction exists solely for a hypothetical future need.
 
-**Acceptance evidence:** Clean install log and configuration review.
+**Acceptance evidence:** Before/after review in the pull request and passing authentication tests.
 
-#### Week 6 - Locator Strategy and Authentication
+#### Week 6 - Fixtures, Test Data, and Negative Authentication
 
-**Objective:** Build the first stable end-to-end test using accessible locators.
+**Objective:** Make setup reusable and expand meaningful authentication coverage.
 
-**Learning focus:** Accessible locators, web-first assertions, actionability, and authentication flows.
+**Learning focus:** Fixtures, dependency injection, parameterized tests, and responsible test-data handling.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: Playwright documentation on [locators](https://playwright.dev/docs/locators), [writing tests](https://playwright.dev/docs/writing-tests), and [actionability](https://playwright.dev/docs/actionability).
-- Reference: MDN guidance on [accessible names](https://developer.mozilla.org/en-US/docs/Glossary/Accessible_name) and [web forms](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms).
-- Apply: Replace generated selectors with role- and label-based locators and assert observable page behavior.
-- Learning check: Explain why a chosen locator is resilient and why a web-first assertion is preferable to a fixed delay.
+- Inject page objects using `test.extend()`.
+- Store public SauceDemo user scenarios as clearly documented test data.
+- Add coverage for `locked_out_user` and one additional relevant authentication scenario.
+- Keep environment-specific secrets out of source control.
 
-**Work:**
+**Required deliverables:**
 
-- Use Playwright Codegen for an initial flow, then refactor it.
-- Replace brittle generated selectors with `getByRole()` and `getByPlaceholder()`.
-- Validate URL and product heading with web-first assertions.
-
-**Deliverables:** `tests/e2e/auth.spec.js`
-
-**Definition of Done:**
-
-- [ ] The authentication test passes in the selected browser.
-- [ ] No XPath or CSS-class selectors are needed for the login flow.
-- [ ] Assertions wait for observable behavior rather than fixed time.
-
-**Acceptance evidence:** Test output and a reviewed locator rationale.
-
-#### Week 7 - Page Object Model
-
-**Objective:** Separate page interaction details from test intent.
-
-**Learning focus:** Page Object Model design, cohesion, coupling, and separation of test intent from UI mechanics.
-
-**Reading guide:**
-
-- Primary: Playwright documentation on [page object models](https://playwright.dev/docs/pom).
-- Reference: Martin Fowler's [PageObject](https://martinfowler.com/bliki/PageObject.html) and the [single-responsibility principle](https://www.oodesign.com/single-responsibility-principle).
-- Apply: Move login and inventory interactions into page objects while keeping business assertions in the tests.
-- Learning check: Identify which responsibility belongs in a page object, fixture, or test and explain why.
-
-**Work:**
-
-- Implement `BasePage`, `LoginPage`, and `InventoryPage`.
-- Encapsulate locators and actions in page objects.
-- Refactor authentication coverage to use the page objects.
-- Keep business assertions in test files unless they are reusable page state checks.
-
-**Deliverables:** `pages/BasePage.js`, `pages/LoginPage.js`, `pages/InventoryPage.js`
-
-**Definition of Done:**
-
-- [ ] Page objects expose meaningful actions.
-- [ ] Tests no longer contain raw login interaction calls.
-- [ ] Repeated locator definitions are not duplicated unnecessarily.
-
-**Acceptance evidence:** POM architecture review and passing authentication test.
-
-#### Week 8 - Fixtures and Data-Driven Testing
-
-**Objective:** Remove manual page-object construction and externalize credentials.
-
-**Learning focus:** Fixtures, dependency injection, test-data design, and safe handling of credentials.
-
-**Reading guide:**
-
-- Primary: Playwright documentation on [fixtures](https://playwright.dev/docs/test-fixtures) and [parameterized tests](https://playwright.dev/docs/test-parameterize).
-- Reference: OWASP [Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html).
-- Apply: Inject page objects through a custom fixture and load non-secret user scenarios from test data.
-- Learning check: Explain the fixture lifecycle and demonstrate that no secret or environment-specific credential is hard-coded in a test.
-
-**Work:**
-
-- Create custom fixtures with `test.extend()`.
-- Move user credentials to JSON test data.
-- Add inventory coverage for adding a product to the cart.
-- Keep secrets and environment-specific values out of source control.
-
-**Deliverables:** `fixtures/test-fixtures.js`, `test-data/users.json`, `tests/e2e/inventory.spec.js`
+- `fixtures/test-fixtures.js`
+- `test-data/users.json`
+- Expanded `tests/e2e/auth.spec.js`
 
 **Definition of Done:**
 
 - [ ] Tests consume injected page objects.
-- [ ] Credentials are loaded from test data.
-- [ ] Inventory coverage verifies the cart badge or cart contents.
-- [ ] No test file manually constructs a page object.
+- [ ] Test data distinguishes public demo credentials from real secrets.
+- [ ] Each negative test asserts the user-visible error or outcome.
+- [ ] No test file manually constructs page objects.
 
-**Acceptance evidence:** Fixture usage review and passing inventory test.
+**Acceptance evidence:** Fixture review and passing authentication suite.
 
-#### Week 9 - Assertion Hardening and Network Mocking
+#### Week 7 - Inventory, Cart, and Checkout Journey
 
-**Objective:** Test frontend resilience and remove timing-based flakiness.
+**Objective:** Automate the highest-value e-commerce flow without duplicating every manual case.
 
-**Learning focus:** Assertion design, asynchronous behavior, network interception, and frontend resilience.
+**Learning focus:** End-to-end scenario design, state transitions, data selection, and assertion quality.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: Playwright documentation on [network](https://playwright.dev/docs/network), [mock APIs](https://playwright.dev/docs/mock), and [auto-waiting](https://playwright.dev/docs/actionability).
-- Reference: Martin Fowler's [Eradicating Non-Determinism in Tests](https://martinfowler.com/articles/nonDeterminism.html).
-- Apply: Block product image requests and assert that inventory remains usable without using `waitForTimeout`.
-- Learning check: Distinguish a deterministic synchronization point from a timing guess and explain what user-visible behavior the test protects.
+- Add page objects only for pages used by implemented tests.
+- Automate adding a product, verifying the cart, and completing checkout.
+- Add one focused removal or validation scenario.
+- Map each automated test to a risk and manual test case.
 
-**Work:**
+**Required deliverables:**
 
-- Remove every `waitForTimeout` from source code.
-- Intercept product image requests with `page.route()`.
-- Verify that the inventory interface remains usable when images fail.
-- Review asynchronous assertions for deterministic behavior.
-
-**Deliverables:** `tests/api-integration/network-mock.spec.js`
+- `pages/CartPage.js`
+- `pages/CheckoutPage.js`
+- `tests/e2e/purchase.spec.js`
+- Updated traceability matrix
 
 **Definition of Done:**
 
-- [ ] No fixed waits remain in source code.
-- [ ] The network-mocking test passes.
-- [ ] The test asserts user-visible stability rather than implementation details.
-- [ ] The selected suite passes repeatedly without unexplained variation.
+- [ ] The purchase journey passes in Chromium locally and in CI.
+- [ ] Assertions verify observable outcomes at important state transitions.
+- [ ] Automated tests are mapped to risks and manual cases.
+- [ ] The suite avoids unnecessary test interdependence.
 
-**Acceptance evidence:** Search result showing no fixed waits and test output.
+**Acceptance evidence:** Green CI run and updated traceability links.
 
-### Phase 3: Git, CI/CD, and Reporting
+#### Week 8 - Resilience and Network Behavior
 
-#### Week 10 - Git Discipline and Repository Conventions
+**Objective:** Demonstrate testing beyond straightforward UI success paths.
 
-**Objective:** Make project history and collaboration practices easy to understand.
+**Learning focus:** Network interception, asynchronous behavior, deterministic synchronization, and frontend resilience.
 
-**Learning focus:** Git history, branching strategy, Conventional Commits, pull request review, and repository hygiene.
+**Core work:**
 
-**Reading guide:**
+- Intercept selected product image requests with `page.route()`.
+- Verify that core inventory behavior remains usable when images fail.
+- Review the suite for fixed waits and timing assumptions.
+- Document what the resilience test proves and what it does not prove.
 
-- Primary: [Pro Git](https://git-scm.com/book/en/v2) chapters on Git basics and branching.
-- Reference: [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) and GitHub's [pull request review documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests).
-- Apply: Review the repository as a new contributor and verify that ignored files, branch names, commits, and PR evidence follow the documented conventions.
-- Learning check: Explain what makes a commit reviewable and how a pull request connects code, risk, validation, and evidence.
+**Required deliverables:**
 
-**Work:**
-
-- Add a complete `.gitignore`.
-- Document branch naming, pull requests, review expectations, and Conventional Commits.
-- Use `main` for releasable work and `develop` for integration.
-- Keep commits small enough to review and trace to a milestone.
-
-**Deliverables:** `.gitignore`, `CONTRIBUTING.md`
+- `tests/integration/network-resilience.spec.js`
+- Short resilience rationale in the relevant issue or documentation
 
 **Definition of Done:**
 
-- [ ] Generated artifacts and dependencies are ignored.
-- [ ] Branch and commit conventions are documented.
-- [ ] Pull requests require tests, evidence, and risk notes.
+- [ ] No `waitForTimeout` remains in project test code.
+- [ ] The test uses a deterministic route condition.
+- [ ] Assertions focus on user-visible behavior.
+- [ ] The test passes repeatedly without unexplained variation.
 
-**Acceptance evidence:** Repository hygiene check and sample commit history.
+**Acceptance evidence:** Repeated test output and repository search showing no fixed waits.
 
-#### Week 11 - GitHub Actions Test Pipeline
+#### Week 9 - Cross-Browser Scope and Stability Review
 
-**Objective:** Run the full suite automatically on pushes and pull requests.
+**Objective:** Expand browser coverage only after the core Chromium suite is reliable.
 
-**Learning focus:** CI workflow design, reproducible environments, artifact retention, and failure visibility.
+**Learning focus:** Browser projects, test isolation, retries, flakiness analysis, and appropriate coverage.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: GitHub Actions documentation on [workflow syntax](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions) and [storing workflow data as artifacts](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts).
-- Reference: Playwright's [continuous integration guide](https://playwright.dev/docs/ci).
-- Apply: Trace every workflow step from checkout through browser installation, test execution, and artifact upload.
-- Learning check: Explain why failures must fail the job while reports and failure evidence still upload with `if: always()`.
+- Run the core suite in Firefox and WebKit.
+- Add mobile Chrome only if the desktop projects are stable within the time box.
+- Run the selected suite repeatedly and investigate every inconsistent result.
+- Record browser-specific limitations instead of concealing them with retries.
 
-**Work:**
+**Required deliverables:**
 
-- Configure an Ubuntu GitHub Actions runner.
-- Install Node.js, dependencies, and Playwright browsers.
-- Run the suite in headless mode.
-- Upload the HTML report and failure artifacts even when tests fail.
-
-**Deliverables:** `.github/workflows/playwright.yml`
+- Updated `playwright.config.js`
+- `docs/automation/Stability_Report.md`
 
 **Definition of Done:**
 
-- [ ] Workflow triggers on pushes and pull requests to `main` and `develop`.
-- [ ] A failing test makes the workflow fail.
-- [ ] Reports are uploaded with `if: always()`.
-- [ ] The workflow is understandable without hidden local setup.
+- [ ] Supported browser projects are documented and justified.
+- [ ] Core tests pass in the browsers claimed as verified.
+- [ ] Retries do not conceal a known deterministic failure.
+- [ ] Any unstable or unsupported project is clearly labeled.
 
-**Acceptance evidence:** Successful workflow run and a deliberately captured failure artifact.
+**Acceptance evidence:** Cross-browser run and stability report with limitations.
 
-#### Week 12 - GitHub Pages Reporting
+### Phase 3: Repository Quality, CI, and Reporting
 
-**Objective:** Publish the latest Playwright HTML report for external review.
+#### Week 10 - Repository Conventions and CI Hardening
 
-**Learning focus:** Static-site deployment, artifact publishing, permissions, and public report safety.
+**Objective:** Turn the early workflow into a clear, repeatable engineering process.
 
-**Reading guide:**
+**Learning focus:** Reviewable Git history, branch strategy, pull request quality, CI design, and artifact retention.
 
-- Primary: GitHub Pages documentation on [publishing with GitHub Actions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
-- Reference: Playwright documentation on the [HTML report](https://playwright.dev/docs/test-reporters).
-- Apply: Follow a report from test output to the deployed Pages URL and check it for secrets, private data, and broken links.
-- Learning check: Explain the deployment trigger, required permissions, published artifact, and how you verified the public URL.
+**Core work:**
 
-**Work:**
+- Document the `main` plus short-lived branch workflow and Conventional Commits.
+- Add or refine linting and formatting scripts.
+- Expand CI from the Week 2 baseline to the supported browser scope.
+- Upload HTML reports and failure artifacts with `if: always()`.
+- Confirm that a failing test fails the workflow.
 
-- Run tests and continue long enough to publish the report.
-- Deploy `playwright-report/` to GitHub Pages.
-- Document repository Pages settings and the expected URL.
-- Link the report from the README only after it is publicly verified.
+**Required deliverables:**
 
-**Deliverables:** `.github/workflows/deploy-report.yml`
-
-**Definition of Done:**
-
-- [ ] Deployment runs from the intended branch.
-- [ ] The published report loads from a public URL.
-- [ ] README links to the verified report.
-- [ ] The report does not expose secrets or private data.
-
-**Acceptance evidence:** Public report URL and deployment run.
-
-### Phase 4: Portfolio Packaging and Outreach
-
-#### Week 13 - Portfolio README
-
-**Objective:** Make the repository understandable within a one-minute scan.
-
-**Learning focus:** Technical communication, information architecture, concise documentation, and evidence-backed claims.
-
-**Reading guide:**
-
-- Primary: GitHub's [README guidance](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories) and documentation style recommendations.
-- Reference: Write the Docs' [documentation guide](https://www.writethedocs.org/guide/).
-- Apply: Ask whether a new reader can understand the purpose, setup, current status, architecture, and evidence within one minute.
-- Learning check: Identify every externally verifiable claim in the README and point to its repository or CI evidence.
-
-**Work:**
-
-- Add purpose, status badges, architecture, quality strategy, and quick start.
-- Link to the manual QA package and live report when available.
-- Explain what is implemented, what is planned, and where evidence lives.
-
-**Deliverables:** `README.md`
+- `CONTRIBUTING.md`
+- Updated `.github/workflows/playwright.yml`
+- Linting and formatting configuration
 
 **Definition of Done:**
 
-- [ ] README explains the project and its business value.
-- [ ] Setup commands are accurate on a clean clone.
-- [ ] Links do not produce 404 responses.
-- [ ] Claims are supported by repository or CI evidence.
+- [ ] Branch, commit, PR, and evidence conventions are documented.
+- [ ] The PR checklist is completed on the Week 10 pull request.
+- [ ] CI fails when tests fail but still uploads diagnostic evidence.
+- [ ] A clean checkout can reproduce the documented commands.
 
-**Acceptance evidence:** README review by someone unfamiliar with the project.
+**Acceptance evidence:** One successful run and one deliberately captured failure artifact.
 
-#### Week 14 - Documentation Polish and Release
+#### Week 11 - Test Reports, Traces, and Evidence Review
 
-**Objective:** Produce a coherent, versioned portfolio release.
+**Objective:** Make failures understandable to someone who did not run the tests locally.
 
-**Learning focus:** Documentation review, release management, reproducibility, and technical diagrams.
+**Learning focus:** Playwright reporting, Trace Viewer, evidence selection, and privacy review.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: GitHub documentation on [release management](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases) and [semantic versioning](https://semver.org/).
-- Reference: C4 model guidance on [software architecture diagrams](https://c4model.com/diagrams).
-- Apply: Compare the architecture diagram, source tree, release notes, and generated artifacts for consistency.
-- Learning check: Reproduce the release package from a clean checkout and explain what the version communicates.
+- Verify HTML report generation and CI retention.
+- Capture and inspect a trace for a controlled failing test.
+- Document how to retrieve and review CI artifacts.
+- Remove the controlled failure after preserving safe example evidence.
 
-**Work:**
+**Required deliverables:**
 
-- Review document consistency, spelling, structure, and traceability.
-- Create the POM architecture diagram.
-- Prepare release notes and attach reviewed PDF artifacts.
-- Tag the first complete portfolio release as `v1.0.0`.
-
-**Deliverables:** `docs/architecture/pom-architecture.png`, release notes, reviewed PDFs
+- `docs/automation/TEST_EVIDENCE_GUIDE.md`
+- Privacy-reviewed trace screenshots or a safe trace artifact
 
 **Definition of Done:**
 
-- [ ] Architecture diagram matches the implemented structure.
-- [ ] Release artifacts are generated from reviewed sources.
-- [ ] Release notes identify known limitations and evidence.
-- [ ] `v1.0.0` is reproducible from the repository.
+- [ ] A reviewer can find the relevant run, report, and trace from the guide.
+- [ ] The evidence explains the failure without exposing sensitive data.
+- [ ] The default branch is green after the controlled exercise.
 
-**Acceptance evidence:** Published release and artifact checksum or file list.
+**Acceptance evidence:** Artifact links and a documented trace walkthrough.
 
-#### Week 15 - CV, LinkedIn, and Trace Evidence
+#### Week 12 - Public Report Publishing
 
-**Objective:** Turn technical work into concise professional evidence.
+**Objective:** Publish verified Playwright results for external review.
 
-**Learning focus:** Professional technical writing, portfolio storytelling, trace analysis, and responsible evidence sharing.
+**Learning focus:** GitHub Pages, deployment permissions, static artifacts, and public-report safety.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: Playwright documentation on [Trace Viewer](https://playwright.dev/docs/trace-viewer).
-- Reference: GitHub's [writing on GitHub](https://docs.github.com/en/get-started/writing-on-github) and OWASP guidance on [data protection](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html).
-- Apply: Turn one verified trace and one repository outcome into concise CV and LinkedIn language without overstating coverage or reliability.
-- Learning check: Distinguish a measurable project outcome from a claim that still needs evidence, and redact sensitive trace content.
+- Deploy `playwright-report/` through a dedicated GitHub Actions workflow.
+- Publish only from the intended branch and event.
+- Review the report for credentials, personal data, and broken assets.
+- Add the public link only after verifying it in a private browser session.
 
-**Work:**
+**Required deliverables:**
 
-- Write a CV-ready project description using concrete outcomes.
-- Draft a LinkedIn post explaining the testing approach.
-- Capture a Playwright trace showing actions, network requests, and DOM snapshots.
-- Avoid unsupported claims about coverage, reliability, or defects.
-
-**Deliverables:** `docs/portfolio/CV_Project_Description.md`, `docs/portfolio/LinkedIn_Post.md`, `docs/portfolio/trace-evidence/`
+- `.github/workflows/deploy-report.yml`
+- Verified report link in `README.md`
 
 **Definition of Done:**
 
-- [ ] CV text names the technologies and engineering decisions.
-- [ ] LinkedIn draft links to verified project evidence.
-- [ ] Trace evidence is anonymized and reviewable.
+- [ ] The deployment succeeds from the documented source.
+- [ ] The public URL loads without GitHub authentication.
+- [ ] The report contains no secrets or unnecessary personal data.
+- [ ] README status accurately distinguishes current results from historical evidence.
 
-**Acceptance evidence:** Final drafts and trace screenshots or video.
+**Acceptance evidence:** Public URL and successful deployment run.
 
-#### Week 16 - LIA Outreach
+### Phase 4: Portfolio Packaging and Practice Outreach
 
-**Objective:** Contact relevant QA decision-makers with specific, evidence-based value.
+#### Week 13 - Reviewer-Friendly README
+
+**Objective:** Make the repository understandable and honest within a one-minute scan.
+
+**Learning focus:** Technical communication, information architecture, and evidence-backed claims.
+
+**Core work:**
+
+- Explain the business risk, test approach, implemented scope, and current status.
+- Add accurate quick-start commands and a concise repository map.
+- Link manual evidence, CI, the public report, and known limitations.
+- Label planned work separately from verified work.
+
+**Required deliverable:** `README.md`
+
+**Definition of Done:**
+
+- [ ] A new reader can identify purpose, status, tools, and evidence within one minute.
+- [ ] Setup commands work from a clean checkout.
+- [ ] All links resolve correctly.
+- [ ] Every outcome claim points to repository, CI, or release evidence.
+
+**Acceptance evidence:** Review by a mentor or another person unfamiliar with the project.
+
+#### Week 14 - Documentation Audit and Release Candidate
+
+**Objective:** Produce a coherent, reproducible portfolio release candidate.
+
+**Learning focus:** Documentation consistency, release management, semantic versioning, and architecture communication.
+
+**Core work:**
+
+- Audit traceability across risks, cases, defects, automated tests, and results.
+- Create an architecture diagram that matches implemented code.
+- Review wording for unsupported or outdated claims.
+- Prepare release notes with scope, evidence, known limitations, and next steps.
+- Create `v1.0.0` only if the core completion standard is met; otherwise use a truthful pre-release such as `v0.9.0`.
+
+**Required deliverables:**
+
+- `docs/architecture/pom-architecture.png`
+- Release notes and reviewed generated artifacts
+
+**Definition of Done:**
+
+- [ ] Architecture documentation matches the repository structure.
+- [ ] Traceability links have no unexplained gaps.
+- [ ] The version accurately reflects project maturity.
+- [ ] Release artifacts can be reproduced from a clean checkout.
+
+**Acceptance evidence:** Published release or pre-release and artifact file list.
+
+#### Week 15 - CV and Professional Project Story
+
+**Objective:** Convert verified engineering work into concise, accurate professional evidence.
+
+**Learning focus:** Outcome writing, responsible metrics, portfolio storytelling, and audience adaptation.
+
+**Core work:**
+
+- Rewrite the CV description using only verified technologies and outcomes.
+- Draft a short project explanation for interviews and Misa IT discussions.
+- Draft an optional LinkedIn post that links to the strongest evidence.
+- Remove or qualify unsupported claims about coverage, reliability, defects, or framework completeness.
+
+**Required deliverables:**
+
+- `docs/portfolio/CV_Project_Description.md`
+- `docs/portfolio/Project_Presentation.md`
+- Optional `docs/portfolio/LinkedIn_Post.md`
+
+**Definition of Done:**
+
+- [ ] Every achievement statement is supported by evidence.
+- [ ] Planned improvements are clearly separated from completed outcomes.
+- [ ] The spoken project explanation takes approximately 60-90 seconds.
+- [ ] The explanation identifies both a strength and a known limitation.
+
+**Acceptance evidence:** Mentor review and links from each claim to relevant evidence.
+
+#### Week 16 - Practice Placement and Employer Outreach
+
+**Objective:** Use the portfolio in a focused search for a practice placement (`praktik`) or supported route toward work.
 
 **Learning focus:** Employer research, professional communication, data minimization, and follow-up planning.
 
-**Reading guide:**
+**Core work:**
 
-- Primary: Swedish Authority for Privacy Protection (IMY) guidance on [personal data](https://www.imy.se/en/organisations/data-protection/).
-- Reference: Harvard Business Review's [networking message guidance](https://hbr.org/2016/11/how-to-write-a-networking-email-that-gets-a-response) and the target employers' own careers pages.
-- Apply: Build a research-backed contact list and write messages that connect a specific employer need to verified portfolio evidence.
-- Learning check: Explain why each target is relevant, what data-minimization considerations apply, and when to follow up.
+- Agree with the Misa IT work consultant or mentor on target roles and a realistic outreach method.
+- Research 8-12 relevant employers or consultancies in the Stockholm region.
+- Prioritize targets that can provide QA, software testing, or test automation tasks and supervision.
+- Prepare and send 5-8 personalized messages through appropriate channels.
+- Track contact method, date, response, and follow-up without committing unnecessary personal data publicly.
 
-**Work:**
+**Required deliverables:**
 
-- Research 15 relevant employers in Stockholm, Kista, and Liljeholmen.
-- Identify QA Leads, Test Managers, Engineering Managers, and consultancy leads.
-- Send at least ten personalized messages.
-- Track contact route, date, response, and follow-up date.
-
-**Deliverables:** `docs/outreach/Employer_Contact_List.csv`, `docs/outreach/LIA_Outreach_Message.md`
+- A private or access-controlled contact tracker
+- `docs/outreach/Practice_Outreach_Message.md`
+- Redacted `docs/outreach/Outreach_Strategy.md`
 
 **Definition of Done:**
 
-- [ ] Fifteen target employers are recorded.
-- [ ] Ten messages are personalized and tracked.
-- [ ] Follow-up dates are scheduled.
-- [ ] No personal data is committed without a legitimate reason and appropriate handling.
+- [ ] Target roles and employer criteria are agreed with the relevant support person.
+- [ ] Each employer has a documented reason for inclusion.
+- [ ] Messages connect an employer need to specific verified portfolio evidence.
+- [ ] Follow-up dates and ownership are clear.
+- [ ] Personal contact data is not committed to the public repository.
 
-**Acceptance evidence:** Redacted contact tracker and message samples.
+**Acceptance evidence:** Redacted strategy, message samples, and privately maintained outreach log.
+
+## Misa IT Review Checkpoints
+
+Use the project to ask for specific support rather than a general review.
+
+| Checkpoint | What to show | What to ask for |
+| --- | --- | --- |
+| Study visit | This plan, risk matrix, test cases, and current repository status | Whether the project can form part of the individual plan; available Playwright/JavaScript support; use of own laptop and GitHub account |
+| End of Week 2 | Two automated login tests and first green CI run | Locator, assertion, and workflow review |
+| End of Week 4 | Manual execution summary and release recommendation | Feedback on defect quality, traceability, and QA reasoning |
+| End of Week 9 | Core automated journey and stability report | Architecture and reliability review; whether Python/API testing adds useful breadth |
+| End of Week 13 | Reviewer-ready README and evidence links | Portfolio gap analysis and practice-placement readiness |
+| Week 16 | Release and targeted employer criteria | Coordinated practice outreach and follow-up ownership |
+
+Recommended recurring request:
+
+> Could we do one short weekly review of a specific artifact or pull request, with one or two concrete improvements for the next week?
+
+## Scope-Control Rules
+
+- Prefer one complete, evidenced user journey over many shallow tests.
+- Do not automate a scenario solely to increase the test count.
+- Do not introduce a page object, fixture, helper, or new tool until current code creates a clear need.
+- Keep unsuccessful experiments on a branch or document the lesson; do not leave the default branch broken.
+- If a core milestone slips, move stretch work rather than compressing review and evidence.
+- Treat mentor feedback as input to the backlog, not an obligation to redesign everything immediately.
 
 ## Completion Standard
 
-The portfolio is complete when every weekly milestone is closed with its documented artifact, acceptance evidence, review record, and traceable Git history. A polished repository may still contain known limitations, but those limitations must be explicit and tied to a risk or future improvement.
+The core portfolio is complete when:
+
+- the highest-priority manual risks and cases have traceable execution evidence;
+- verified defects and the release recommendation are evidence-based;
+- the core Playwright journey runs locally and in CI;
+- supported browser claims match actual runs;
+- reports and failure evidence are reviewable and privacy-checked;
+- the README, CV description, architecture documentation, and release describe only implemented work;
+- each completed milestone has a linked issue, pull request, validation record, and relevant artifact; and
+- known limitations and next steps are explicit.
+
+A polished portfolio does not need to be large or flawless. It needs to make engineering decisions, results, and limitations easy for another person to verify.
