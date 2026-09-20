@@ -21,3 +21,9 @@ Thumbs.db
 # Temporary files
 *.log
 *.tmp
+
+# Private working notes and Python cache
+/private/
+__pycache__/
+*.pyc
+

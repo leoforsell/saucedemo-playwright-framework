@@ -24,7 +24,7 @@ labels: automation, testing
 
 - [ ] The test is deterministic and uses web-first assertions.
 - [ ] No fixed waits are introduced.
-- [ ] Page interaction details follow the repository POM/fixture conventions.
+- [ ] Page interactions match the current stage: direct tests initially, justified POM/fixtures later.
 - [ ] The test passes in the intended project or browser.
 
 ## Validation
@@ -37,3 +37,4 @@ labels: automation, testing
 
 - Known limitation:
 - Related issue:
+

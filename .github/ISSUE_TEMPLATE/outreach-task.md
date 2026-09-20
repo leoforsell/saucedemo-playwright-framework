@@ -1,5 +1,5 @@
 ---
-name: LIA outreach task
+name: Practice-placement preparation
 about: Track employer research and personalized QA outreach
 labels: outreach
 ---
@@ -39,3 +39,4 @@ labels: outreach
 - [ ] Sent
 - [ ] Follow-up scheduled
 - [ ] Closed
+

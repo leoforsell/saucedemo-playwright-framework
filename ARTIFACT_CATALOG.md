@@ -1,50 +1,37 @@
-# Portfolio Artifact Catalog
+# Portfolio artifact catalog
 
-This catalog is the traceability index for the 16-week SauceDemo QA portfolio. Markdown files are authoritative. PDFs, PNGs, screenshots, traces, videos, and HTML reports are generated evidence.
+Weekly titles follow [PORTFOLIO_PLAN.md](PORTFOLIO_PLAN.md). Paths in backticks may be **planned**, not existing files. Markdown is the source; reports, screenshots, PDFs, and traces are execution or release evidence only after review.
 
-| Week | GitHub milestone | Artifact | Type | Evidence required | Status |
-| ---: | --- | --- | --- | --- | --- |
-| 1 | Week 01 - Test Strategy and Risk Analysis | `docs/manual-testing/Test_Strategy_SauceDemo.md` | Source document | Risk matrix, scope, entry/exit criteria | Planned |
-| 2 | Week 02 - Test Case Design and Traceability | `docs/manual-testing/Test_Cases_Matrix.md` | Source document | Ten cases mapped to user stories and risks | Planned |
-| 3 | Week 03 - Exploratory Testing and Defect Management | `docs/manual-testing/Bug_Reports.md` | Source document | Three reproducible reports and evidence references | Planned |
-| 3 | Week 03 - Exploratory Testing and Defect Management | `docs/manual-testing/screenshots/` | Evidence directory | Redacted screenshots and console excerpts | Planned |
-| 4 | Week 04 - Test Execution Summary and Release Recommendation | `docs/manual-testing/Test_Execution_Summary.md` | Source document | Ten execution statuses and release decision | Planned |
-| 4 | Week 04 - Test Execution Summary and Release Recommendation | `docs/manual-testing/QA_Test_Plan_SauceDemo.pdf` | Generated artifact | PDF matches reviewed Markdown sources | Planned |
-| 5 | Week 05 - Playwright Project Setup | `package.json` | Configuration | Clean install and dependency verification | Planned |
-| 5 | Week 05 - Playwright Project Setup | `playwright.config.js` | Configuration | Four browser projects and reporting settings | Planned |
-| 5 | Week 05 - Playwright Project Setup | `.eslintrc.json`, `.prettierrc` | Tooling | Lint and formatting checks | Planned |
-| 6 | Week 06 - Locator Strategy and Authentication | `tests/e2e/auth.spec.js` | Automated test | Passing login test and locator review | Planned |
-| 7 | Week 07 - Page Object Model | `pages/BasePage.js` | Source code | Shared navigation implementation | Planned |
-| 7 | Week 07 - Page Object Model | `pages/LoginPage.js` | Source code | Encapsulated login interactions | Planned |
-| 7 | Week 07 - Page Object Model | `pages/InventoryPage.js` | Source code | Encapsulated inventory interactions | Planned |
-| 8 | Week 08 - Fixtures and Data-Driven Testing | `fixtures/test-fixtures.js` | Test infrastructure | Injected page objects | Planned |
-| 8 | Week 08 - Fixtures and Data-Driven Testing | `test-data/users.json` | Test data | Standard and locked-user scenarios | Planned |
-| 8 | Week 08 - Fixtures and Data-Driven Testing | `tests/e2e/inventory.spec.js` | Automated test | Product-to-cart verification | Planned |
-| 9 | Week 09 - Assertion Hardening and Network Mocking | `tests/api-integration/network-mock.spec.js` | Automated test | Blocked image requests with stable UI assertions | Planned |
-| 10 | Week 10 - Git Discipline and Repository Conventions | `.gitignore` | Repository configuration | No generated artifacts or dependencies tracked | Planned |
-| 10 | Week 10 - Git Discipline and Repository Conventions | `CONTRIBUTING.md` | Process document | Branch, commit, PR, and evidence guidance | Planned |
-| 11 | Week 11 - GitHub Actions Test Pipeline | `.github/workflows/playwright.yml` | CI workflow | Green run and failure artifact | Planned |
-| 12 | Week 12 - GitHub Pages Reporting | `.github/workflows/deploy-report.yml` | Deployment workflow | Verified public HTML report URL | Planned |
-| 13 | Week 13 - Portfolio README | `README.md` | Portfolio document | Link and clean-clone review | Planned |
-| 14 | Week 14 - Documentation Polish and Release | `docs/architecture/pom-architecture.png` | Architecture diagram | Diagram matches source structure | Planned |
-| 14 | Week 14 - Documentation Polish and Release | `v1.0.0` release package | Release artifact | Release notes and reviewed attachments | Planned |
-| 15 | Week 15 - CV, LinkedIn, and Trace Evidence | `docs/portfolio/CV_Project_Description.md` | Portfolio copy | Technology and outcome review | Planned |
-| 15 | Week 15 - CV, LinkedIn, and Trace Evidence | `docs/portfolio/LinkedIn_Post.md` | Portfolio copy | Evidence-backed public draft | Planned |
-| 15 | Week 15 - CV, LinkedIn, and Trace Evidence | `docs/portfolio/trace-evidence/` | Evidence directory | Redacted trace screenshots or video | Planned |
-| 16 | Week 16 - LIA Outreach | `docs/outreach/Employer_Contact_List.csv` | Outreach tracker | Fifteen employers and follow-up dates | Planned |
-| 16 | Week 16 - LIA Outreach | `docs/outreach/LIA_Outreach_Message.md` | Outreach template | Personalized message samples | Planned |
+Current baseline: document scaffolding exists; no application executions are recorded. A document template does not complete its milestone. All weekly outcomes remain Planned or In progress until their acceptance evidence exists.
 
-## Status Rules
+| Week | Milestone | Deliverables | Acceptance evidence | Outcome maturity |
+| ---: | --- | --- | --- | --- |
+| 1 | Week 01 - Risk Analysis and Priority Test Design | `docs/manual-testing/Test_Strategy_SauceDemo.md`; `docs/manual-testing/Test_Cases_Matrix.md`; dated execution records | Risk matrix, reviewed traceability table, and two manual execution records. | In progress — draft documents only |
+| 2 | Week 02 - First Working Vertical Slice | `package.json`; lockfile; `playwright.config.js`; `tests/e2e/auth.spec.js`; `.github/workflows/playwright.yml` | Green workflow URL, local test output, and a short locator rationale in the pull request. | Planned |
+| 3 | Week 03 - Exploratory Testing and Defect Evidence | `docs/manual-testing/Exploratory_Sessions.md`; `docs/manual-testing/Bug_Reports.md`; reviewed screenshots | Session records and reproducible defect reports reviewed for clarity. | In progress — draft documents only |
+| 4 | Week 04 - Manual Execution and Release Recommendation | `docs/manual-testing/Test_Execution_Summary.md`; reviewed `QA_Test_Plan_SauceDemo.pdf` | Reviewed summary, result links, and versioned PDF artifact. | In progress — draft documents only |
+| 5 | Week 05 - Page Object Model After Working Tests | `pages/LoginPage.js`; `pages/InventoryPage.js`; optional justified shared page object | Before/after review in the pull request and passing authentication tests. | Planned |
+| 6 | Week 06 - Fixtures, Test Data, and Negative Authentication | `fixtures/test-fixtures.js`; `test-data/users.json`; expanded auth tests | Fixture review and passing authentication suite. | Planned |
+| 7 | Week 07 - Inventory, Cart, and Checkout Journey | `pages/CartPage.js`; `pages/CheckoutPage.js`; `tests/e2e/purchase.spec.js`; case mappings | Green CI run and updated traceability links. | Planned |
+| 8 | Week 08 - Resilience and Network Behavior | `tests/integration/network-resilience.spec.js`; resilience rationale | Repeated test output and repository search showing no fixed waits. | Planned |
+| 9 | Week 09 - Cross-Browser Scope and Stability Review | `docs/automation/Stability_Report.md`; supported-browser configuration | Cross-browser run and stability report with limitations. | Planned |
+| 10 | Week 10 - Repository Conventions and CI Hardening | `CONTRIBUTING.md`; lint/format configuration; hardened test workflow | One successful run and one deliberately captured failure artifact. | In progress — draft documents only |
+| 11 | Week 11 - Test Reports, Traces, and Evidence Review | `docs/automation/TEST_EVIDENCE_GUIDE.md`; reviewed failure evidence | Artifact links and a documented trace walkthrough. | Planned |
+| 12 | Week 12 - Public Report Publishing | `.github/workflows/deploy-report.yml`; verified public report link | Public URL and successful deployment run. | Planned |
+| 13 | Week 13 - Reviewer-Friendly README | `README.md`; current setup and evidence links | Review by a mentor or another person unfamiliar with the project. | In progress — draft documents only |
+| 14 | Week 14 - Documentation Audit and Release Candidate | `docs/architecture/pom-architecture.png`; release notes and attachments | Published release or pre-release and artifact file list. | Planned |
+| 15 | Week 15 - CV and Professional Project Story | `docs/portfolio/CV_Project_Description.md`; `docs/portfolio/Project_Presentation.md`; optional LinkedIn draft | Mentor review and links from each claim to relevant evidence. | In progress — draft documents only |
+| 16 | Week 16 - Practice Placement and Employer Outreach | `docs/outreach/Practice_Outreach_Message.md`; `docs/outreach/Outreach_Strategy.md`; private contact tracker | Redacted strategy, message samples, and privately maintained outreach log. | In progress — draft documents only |
 
-- **Planned:** Defined but not started.
-- **In progress:** Work exists and is being developed.
-- **Ready for review:** Acceptance evidence is attached and awaiting review.
-- **Complete:** Reviewed, traceable, and linked to its closed milestone.
-- **Blocked:** A dependency or environment issue prevents completion; the reason must be recorded in the related issue.
+## Reusable preparation material
 
-## Evidence Rules
+- [Misa IT preparation](docs/portfolio/MISA_IT_PREPARATION.md)
+- [Repository reuse and tracking guide](docs/REPOSITORY_TEMPLATE_GUIDE.md)
+- [Execution record template](docs/manual-testing/Execution_Record_Template.md)
+- [Evidence and release-decision rules](docs/manual-testing/EVIDENCE_STANDARD.md)
 
-- Redact credentials, personal contact details, access tokens, and private URLs.
-- Link evidence from the related GitHub issue or pull request.
-- Record the command, browser, operating system, and date for executable evidence.
-- Keep generated reports out of source control unless they are intentionally attached to a release.
+## Keep state and evidence separate
+
+Outcome maturity: **Planned → In progress → Verified → Published**, as defined in the plan. A draft file can exist while execution is still Planned. Issue board state: **Todo / Doing / Review / Done / Blocked**. Done requires acceptance evidence and review; a closed issue alone is not proof.
+
+Add a dated run or review link before upgrading maturity. Record the repository commit, browser/OS, command or manual procedure, result, and limitations. Review evidence before publication, and retain selected release evidence beyond temporary CI artifact expiry.

@@ -24,6 +24,8 @@ By Week 16, a reviewer should be able to verify:
 4. **Test evidence:** CI runs, reports, traces, screenshots, and documented limitations.
 5. **Professional communication:** a clear README, an honest project description, a versioned release, and a targeted practice-placement plan.
 
+For practical preparation, start with [Misa IT preparation](docs/portfolio/MISA_IT_PREPARATION.md). Use the [repository template guide](docs/REPOSITORY_TEMPLATE_GUIDE.md) to keep GitHub tracking aligned with this plan.
+
 ## Scope and Capacity
 
 Use the following weekly time box as a guide:
@@ -155,7 +157,7 @@ Record the title, URL, and access date only when a source materially influences 
 **Core work:**
 
 - Initialize Node.js and Playwright in JavaScript.
-- Configure Chromium, the HTML reporter, traces on first retry, and screenshots on failure.
+- Configure Chromium, the HTML reporter, and screenshots on failure. Use traces on first retry when retries are enabled, or retain-on-failure when retries are zero.
 - Automate successful login and rejected invalid login.
 - Prefer `getByRole()`, `getByLabel()`, or `getByPlaceholder()` over brittle selectors.
 - Add a minimal GitHub Actions workflow using `npm ci` and Chromium.
@@ -216,7 +218,7 @@ Record the title, URL, and access date only when a source materially influences 
 
 **Core work:**
 
-- Execute all ten documented cases and record pass, fail, or blocked status.
+- Execute the ten baseline cases and any approved additions (the invalid-login case adds an eleventh case). Record pass, fail, or blocked status; retain Not run for incomplete work.
 - Link failed cases to verified defect reports.
 - Summarize coverage, limitations, unresolved defects, and residual risks.
 - Make a Go, No-Go, or Conditional Release recommendation.
@@ -229,7 +231,7 @@ Record the title, URL, and access date only when a source materially influences 
 
 **Definition of Done:**
 
-- [ ] All ten cases have a dated status and environment.
+- [ ] Every case in the approved cycle has a dated status and environment; incomplete cases prevent declaring the execution milestone complete.
 - [ ] Results can be traced to cases, risks, and defects.
 - [ ] The recommendation follows from the evidence and stated exit criteria.
 - [ ] The PDF matches the reviewed Markdown source.
@@ -359,7 +361,7 @@ Record the title, URL, and access date only when a source materially influences 
 
 **Core work:**
 
-- Run the core suite in Firefox and WebKit.
+- Review Chromium stability first. If capacity permits, run the core suite in Firefox and WebKit as stretch work; record deferral explicitly otherwise.
 - Add mobile Chrome only if the desktop projects are stable within the time box.
 - Run the selected suite repeatedly and investigate every inconsistent result.
 - Record browser-specific limitations instead of concealing them with retries.
@@ -500,7 +502,7 @@ Record the title, URL, and access date only when a source materially influences 
 - Create an architecture diagram that matches implemented code.
 - Review wording for unsupported or outdated claims.
 - Prepare release notes with scope, evidence, known limitations, and next steps.
-- Create `v1.0.0` only if the core completion standard is met; otherwise use a truthful pre-release such as `v0.9.0`.
+- Create `v1.0.0` only if the core completion standard is met; otherwise use a truthful pre-1.0 version such as `v0.9.0`, or a prerelease such as `v1.0.0-rc.1`.
 
 **Required deliverables:**
 
@@ -614,3 +616,4 @@ The core portfolio is complete when:
 - known limitations and next steps are explicit.
 
 A polished portfolio does not need to be large or flawless. It needs to make engineering decisions, results, and limitations easy for another person to verify.
+
