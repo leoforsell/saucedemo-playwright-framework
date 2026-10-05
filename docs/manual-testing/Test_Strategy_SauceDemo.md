@@ -5,10 +5,10 @@
 | Field | Value |
 | --- | --- |
 | Document status | Draft |
-| Owner | Portfolio author |
+| Owner | Leo Forsell |
 | System under test | SauceDemo e-commerce sandbox |
 | Version | 0.1.0 |
-| Last updated | 2026-09-12 |
+| Last updated | 2026-09-28 |
 
 ## 1. Purpose
 
@@ -75,15 +75,27 @@ Risk score = probability of failure (1-3) multiplied by business impact (1-3).
 
 | ID | Module / Function | Potential failure | Probability (1-3) | Impact (1-3) | Score | Mitigation | Status |
 | --- | --- | --- | ---: | ---: | ---: | --- | --- |
-| R-01 | Authentication | Valid customers cannot sign in |  |  |  | Positive and negative login tests | Open |
-| R-02 | Inventory | Products or prices are displayed incorrectly |  |  |  | Inventory content and sorting checks | Open |
-| R-03 | Sorting | Products are ordered incorrectly |  |  |  | Verify all supported sort options | Open |
+| R-01 | Authentication | Valid customers cannot sign in | 2 | 3 | 6 | Positive and negative login tests | Open |
+| R-02 | Inventory | Products or prices are displayed incorrectly | 2 | 3 | 6 | Inventory content and sorting checks | Open |
+| R-03 | Sorting | Products are ordered incorrectly | 2 | 1 | 2 | Verify all supported sort options | Open |
 | R-04 | Cart | Items, quantities, or totals are incorrect |  |  |  | Add, remove, and total verification | Open |
 | R-05 | Checkout | Required customer data is accepted incorrectly |  |  |  | Boundary and empty-field validation | Open |
 | R-06 | Order confirmation | A completed order has no reliable confirmation |  |  |  | End-to-end confirmation test | Open |
 | R-07 | Logout | Session remains active after logout |  |  |  | Logout and back-navigation checks | Open |
 
 ## 8. Assumptions and Constraints
+
+R01 - Authentication: Probability is 2 because historical data is unavailable. Impact is 3 because if a user cannot log in, they cannot shop. TC-AUTH-001 checks successful login. 
+
+R02 - Inventory: Probability is 2 because historical data is unavailable. Impact is 3 because the user cannot order the correct item for the correct price. The risk score thus becomes 6. TC-INVE-001 checks a successful inventory. 
+
+R03 - Sorting: Probability is 2 because historical data is unvailable. Impact is 1 because the user can still complete the purchase, even with the incorrectly sorted items. The risk score thus becomes 2. TC-SORT-001 checks successful sorting.
+
+R04 - Cart: Probability is 2 because historical data is unavailable. Impact is 3 because if the items, quantities and totals are incorrect, then it is impossible to shop correctly. The risk score thus becomes 6. TC-CART-001 checks a successful cart.
+
+R05 - Checkout: Probability is 2 because historical data is unavailable. Impact
+
+R05 - Checkout: Probability is 2 because historical data is unavailable.  
 
 - SauceDemo is a sandbox and may change independently of this portfolio.
 - Test accounts and test data are non-production values.

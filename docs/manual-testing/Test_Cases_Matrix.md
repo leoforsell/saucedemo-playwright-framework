@@ -23,11 +23,11 @@
 
 | Test ID | Module | User story | Risk | Priority | Type | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| TC-AUTH-001 | Authentication | US-01 | R-01 | P1 | Positive | Not run |
+| TC-AUTH-001 | Authentication | US-01 | R-01 | P1 | Positive | PASS |
 | TC-AUTH-002 | Authentication | US-01 | R-01 | P1 | Negative | Not run |
 | TC-INV-001 | Inventory | US-02 | R-02 | P1 | Positive | Not run |
 | TC-INV-002 | Sorting | US-02 | R-03 | P2 | Positive | Not run |
-| TC-CART-001 | Cart | US-03 | R-04 | P1 | Positive | Not run |
+| TC-CART-001 | Cart | US-03 | R-04 | P1 | Positive | PASS |
 | TC-CART-002 | Cart | US-03 | R-04 | P2 | Negative / boundary | Not run |
 | TC-CHK-001 | Checkout | US-04 | R-05 | P1 | Positive | Not run |
 | TC-CHK-002 | Checkout | US-04 | R-05 | P1 | Negative / boundary | Not run |
@@ -113,5 +113,5 @@
 ## Execution Record
 
 | Test ID | Tester | Environment | Date | Result | Evidence |
-| --- | --- | --- | --- | --- | --- |
-| All cases | Pending | Pending | Pending | Not run | Pending |
+| TC-AUTH-001 | Leo | Google Chrome 152.0 / macOS 26 | 2026-10-02 | PASS |<screenshots/Screenshot 2026-10-05 at 10.14.53.png>|
+| TC-CART-001 | Leo | Google Chrome 152.0 / macOS 26 | 2026-10-02 | PASS |<screenshots/Screenshot 2026-10-05 at 10.23.51.png> <screenshots/Screenshot 2026-10-05 at 10.24.15.png>|
