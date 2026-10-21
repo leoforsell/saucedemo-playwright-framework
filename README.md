@@ -1,69 +1,65 @@
 # SauceDemo QA Engineering Portfolio
 
-A 16-week portfolio project for demonstrating practical quality assurance and test automation skills with the SauceDemo e-commerce sandbox.
+A practical QA portfolio by Leo Forsell: use risk analysis, manual testing, and JavaScript/Playwright automation to explain whether an e-commerce journey works and what remains uncertain.
 
-> **Status:** Planning and repository setup in progress
+> **Current status: planning and document templates.** No executable Playwright suite, application test results, CI test run, or public report has been verified in this repository yet. A template is not execution evidence.
 
-## What This Portfolio Demonstrates
+## Start here
 
-- Risk-based manual test strategy and release decision-making
-- Traceable test case design and exploratory defect reporting
-- JavaScript and Playwright end-to-end automation
-- Page Object Model and custom fixtures
-- Data-driven testing and network interception
-- GitHub Actions CI and Playwright reporting
-- Evidence-based documentation and professional LIA outreach
+1. Read the [Misa IT preparation checklist](docs/portfolio/MISA_IT_PREPARATION.md).
+2. Follow [Week 1 of the plan](PORTFOLIO_PLAN.md#week-1---risk-analysis-and-priority-test-design): review risks and execute two priority cases.
+3. In Week 2, implement successful and invalid login tests and the first Chromium CI run.
+4. Use the [artifact catalog](ARTIFACT_CATALOG.md) to find deliverables and their evidence requirements.
 
-## Project Structure
+## Intended skills and evidence
 
-```text
-.
-|-- .github/                 # Milestones, issue templates, PR process, workflows
-|-- docs/
-|   |-- architecture/        # POM diagrams and architecture notes
-|   |-- manual-testing/      # Test strategy, cases, defects, and summaries
-|   |-- outreach/            # LIA contact tracking and message templates
-|   `-- portfolio/           # CV, LinkedIn, and trace evidence
-|-- pages/                   # Playwright Page Object Model classes
-|-- fixtures/                # Custom Playwright fixtures
-|-- test-data/               # Non-secret test data
-|-- tests/                   # E2E and integration tests
-|-- ARTIFACT_CATALOG.md      # Week-to-artifact traceability index
-`-- PORTFOLIO_PLAN.md        # Complete English 16-week plan
-```
+| Skill | Current material | What will demonstrate it |
+| --- | --- | --- |
+| Risk-based testing | [Draft strategy](docs/manual-testing/Test_Strategy_SauceDemo.md) | Justified risk priorities and test selection |
+| Test design | [Case matrix](docs/manual-testing/Test_Cases_Matrix.md) | Repeatable cases, explicit expectations, and execution records |
+| Exploratory testing | [Session template](docs/manual-testing/Exploratory_Sessions.md) | Dated observations and reproduced findings |
+| Quality decisions | [Execution summary](docs/manual-testing/Test_Execution_Summary.md) | Results, limitations, and a reasoned release recommendation |
+| Automation and CI | Week 2 onward in the plan | Working code, clean-install instructions, and run links |
+| Collaboration | [Working agreement](CONTRIBUTING.md) and issue/PR templates | Reviewable changes and responses to feedback |
 
 ## Roadmap
 
-The work is divided into four phases:
+- **Weeks 1–4:** Risk assessment, first automated tests and CI, manual evidence.
+- **Weeks 5–9:** Page objects, fixtures, purchase journey, resilience, and stability review. Additional browsers are stretch work.
+- **Weeks 10–12:** CI hardening, diagnostic evidence, and report publishing.
+- **Weeks 13–16:** Portfolio review, release candidate, project story, and practice-placement preparation.
 
-1. **Weeks 1-4:** Manual QA foundation
-2. **Weeks 5-9:** Playwright automation
-3. **Weeks 10-12:** Git, CI/CD, and reporting
-4. **Weeks 13-16:** Portfolio packaging and LIA outreach
+[PORTFOLIO_PLAN.md](PORTFOLIO_PLAN.md) is the source of truth for the 16-week sequence and acceptance criteria. Weeks are adjustable work blocks, not fixed deadlines.
 
-See [PORTFOLIO_PLAN.md](PORTFOLIO_PLAN.md) for weekly objectives, acceptance criteria, and evidence requirements. See [ARTIFACT_CATALOG.md](ARTIFACT_CATALOG.md) for the traceability index.
+## Repository map
 
-## Local Setup
+- `docs/manual-testing/`: strategy, case definitions, execution and exploration templates.
+- `docs/portfolio/`: preparation checklist, honest project descriptions, and presentation guide.
+- `docs/outreach/`: message templates; keep actual contact records privately.
+- `.github/`: issue/PR templates and generated milestone manifest.
+- `scripts/`: planning tools; preview by default.
+- Planned in Week 2: `package.json`, lockfile, `playwright.config.js`, `tests/e2e/auth.spec.js`, and `.github/workflows/playwright.yml`.
+- Planned from Week 5: `pages/`, `fixtures/`, and `test-data/` as needed by implemented tests.
 
-The executable Playwright framework is introduced during Week 5. Once `package.json` exists, the intended clean-clone workflow is:
+## Setup
+
+This is currently a documentation scaffold; there is no runnable application test command yet. To inspect the plan with Python 3.9 or later:
+
+```bash
+python3 scripts/portfolio_plan.py --check
+python3 scripts/portfolio_plan.py --kind issues
+```
+
+Once Week 2 delivers the framework, validate and document the intended clean-checkout workflow:
 
 ```bash
 npm ci
-npx playwright install
-npx playwright test
+npx playwright install chromium
+npx playwright test --project=chromium
 ```
 
-The commands above are intentionally documented as the target workflow until the implementation milestone is complete.
+Do not treat those future commands as verified today. See the [reuse and GitHub setup guide](docs/REPOSITORY_TEMPLATE_GUIDE.md) for template setup, labels, and existing-issue handling.
 
-## Reports and Releases
+## Evidence and limitations
 
-- **CI status:** To be added after Week 11.
-- **Live Playwright report:** To be added after Week 12 and verified before publication.
-- **Release package:** Planned for `v1.0.0` during Week 14.
-- **Manual QA documents:** See [`docs/manual-testing/`](docs/manual-testing/).
-
-No test result, defect, release, or public report is claimed until the corresponding evidence is committed or linked from CI.
-
-## Quality and Collaboration
-
-Contributions follow the guidance in [CONTRIBUTING.md](CONTRIBUTING.md). Work is organized through the 16 weekly milestones listed in [.github/milestones.md](.github/milestones.md), with issue templates for recurring QA, automation, CI/CD, documentation, and outreach work.
+Start with desktop Chromium. SauceDemo is an external demonstration site, so availability and behavior may change independently of this repository. A simulated release recommendation is a learning artifact, not authority to release SauceDemo. Reports and badges will be linked only after actual execution. See [evidence rules](docs/manual-testing/EVIDENCE_STANDARD.md).

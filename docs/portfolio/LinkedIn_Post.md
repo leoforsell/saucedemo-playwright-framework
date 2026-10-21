@@ -1,25 +1,11 @@
-# LinkedIn Post Draft
+# LinkedIn draft — planning stage
 
-I have been building a practical QA engineering portfolio around the SauceDemo e-commerce sandbox.
+I am developing a QA portfolio around SauceDemo. My current work focuses on risk assessment, test-case design, and a clear plan for recording results and explaining quality decisions.
 
-The project combines manual and automated testing:
+Next, I plan to execute the first manual cases and implement two login tests using JavaScript and Playwright, with GitHub Actions for repeatable checks.
 
-- Risk-based test strategy and traceability
-- Exploratory testing and evidence-based defect reporting
-- Playwright with JavaScript and Page Object Model
-- Custom fixtures and external test data
-- Network interception for frontend resilience
-- GitHub Actions CI and HTML test reporting
+Project: https://github.com/leoforsell/saucedemo-playwright-framework
 
-The goal is not just to make tests pass. It is to make quality decisions visible, repeatable, and easy for a team to review.
+#SoftwareTesting #QA #LearningInPublic
 
-Project: [Add verified GitHub repository link]
-Live report: [Add verified report link after Week 12]
-
-#SoftwareTesting #QA #Playwright #JavaScript #TestAutomation #QualityAssurance
-
-## Publication Checklist
-
-- [ ] Replace placeholders with verified links.
-- [ ] Remove claims that are not supported by repository evidence.
-- [ ] Attach reviewed trace evidence without credentials or private data.
+Before posting, verify the current repository state and update the wording accordingly. This is an unsent draft; no automated tests or results are claimed here.

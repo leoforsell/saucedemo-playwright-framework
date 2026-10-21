@@ -1,26 +1,22 @@
-# GitHub Milestone Manifest
+# GitHub milestone manifest
 
-Create these milestones in the repository `saucedemo-playwright-framework`. The manifest is the local source for milestone names and descriptions. Add due dates after selecting the actual start date.
+Generated from `PORTFOLIO_PLAN.md` by `python3 scripts/portfolio_plan.py --write-manifest`. Do not edit titles here independently.
 
-| # | Milestone | Description |
+| Week | Milestone | Objective |
 | ---: | --- | --- |
-| 1 | Week 01 - Test Strategy and Risk Analysis | Define SauceDemo scope, business risks, entry criteria, exit criteria, and mitigation. |
-| 2 | Week 02 - Test Case Design and Traceability | Produce ten traceable test cases using black-box techniques and Gherkin acceptance criteria. |
-| 3 | Week 03 - Exploratory Testing and Defect Management | Run exploratory sessions and document three reproducible defects with evidence. |
-| 4 | Week 04 - Test Execution Summary and Release Recommendation | Execute the manual suite and produce a justified Go/No-Go recommendation. |
-| 5 | Week 05 - Playwright Project Setup | Configure the JavaScript Playwright project, browsers, reporters, and test artifacts. |
-| 6 | Week 06 - Locator Strategy and Authentication | Implement stable locator-based authentication coverage. |
-| 7 | Week 07 - Page Object Model | Introduce reusable page objects and refactor authentication tests. |
-| 8 | Week 08 - Fixtures and Data-Driven Testing | Add custom fixtures, external test data, and inventory coverage. |
-| 9 | Week 09 - Assertion Hardening and Network Mocking | Remove fixed waits and verify UI resilience with network interception. |
-| 10 | Week 10 - Git Discipline and Repository Conventions | Establish repository hygiene, branching, commit, and review conventions. |
-| 11 | Week 11 - GitHub Actions Test Pipeline | Run the test suite in CI and upload reports and failure evidence. |
-| 12 | Week 12 - GitHub Pages Reporting | Publish the latest HTML test report to a verified public URL. |
-| 13 | Week 13 - Portfolio README | Create a recruiter-focused README with accurate setup and evidence links. |
-| 14 | Week 14 - Documentation Polish and Release | Review artifacts, create the architecture diagram, and prepare v1.0.0. |
-| 15 | Week 15 - CV, LinkedIn, and Trace Evidence | Package the project for professional communication with trace evidence. |
-| 16 | Week 16 - LIA Outreach | Research target employers and conduct evidence-based LIA outreach. |
-
-## Suggested Creation Command
-
-After authenticating GitHub CLI and creating the repository, milestones can be created manually or with a reviewed script. Do not run bulk creation until the repository owner and due dates are confirmed.
+| 1 | Week 01 - Risk Analysis and Priority Test Design | Decide what matters most before expanding documentation or automation. |
+| 2 | Week 02 - First Working Vertical Slice | Turn the plan into running code and visible CI evidence as early as possible. |
+| 3 | Week 03 - Exploratory Testing and Defect Evidence | Investigate behavior beyond scripted happy paths and produce reproducible findings. |
+| 4 | Week 04 - Manual Execution and Release Recommendation | Use accumulated evidence to make a defensible release decision. |
+| 5 | Week 05 - Page Object Model After Working Tests | Improve maintainability without hiding test intent or over-engineering the first suite. |
+| 6 | Week 06 - Fixtures, Test Data, and Negative Authentication | Make setup reusable and expand meaningful authentication coverage. |
+| 7 | Week 07 - Inventory, Cart, and Checkout Journey | Automate the highest-value e-commerce flow without duplicating every manual case. |
+| 8 | Week 08 - Resilience and Network Behavior | Demonstrate testing beyond straightforward UI success paths. |
+| 9 | Week 09 - Cross-Browser Scope and Stability Review | Expand browser coverage only after the core Chromium suite is reliable. |
+| 10 | Week 10 - Repository Conventions and CI Hardening | Turn the early workflow into a clear, repeatable engineering process. |
+| 11 | Week 11 - Test Reports, Traces, and Evidence Review | Make failures understandable to someone who did not run the tests locally. |
+| 12 | Week 12 - Public Report Publishing | Publish verified Playwright results for external review. |
+| 13 | Week 13 - Reviewer-Friendly README | Make the repository understandable and honest within a one-minute scan. |
+| 14 | Week 14 - Documentation Audit and Release Candidate | Produce a coherent, reproducible portfolio release candidate. |
+| 15 | Week 15 - CV and Professional Project Story | Convert verified engineering work into concise, accurate professional evidence. |
+| 16 | Week 16 - Practice Placement and Employer Outreach | Use the portfolio in a focused search for a practice placement (`praktik`) or supported route toward work. |

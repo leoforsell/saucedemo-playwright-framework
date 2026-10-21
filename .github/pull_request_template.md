@@ -32,4 +32,6 @@
 - [ ] No credentials, tokens, or private contact data are included.
 - [ ] No unrelated generated files are included.
 - [ ] Links and paths were checked.
-- [ ] The change is ready to merge.
+- [ ] Planned work is clearly separated from verified outcomes.
+- [ ] The change is ready to merge; unchecked acceptance criteria are explained.
+

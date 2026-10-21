@@ -24,3 +24,8 @@ Thumbs.db
 
 # Playwright
 /playwright/.auth/
+
+# Private working notes and Python cache
+/private/
+__pycache__/
+*.pyc

@@ -9,7 +9,7 @@ labels: defect, manual-qa
 - Defect ID:
 - Title:
 - Severity: Blocker / Critical / Major / Minor
-- Priority: P1 / P2 / P3 / P4
+- Priority: P1 / P2 / P3 (include rationale; see docs/manual-testing/EVIDENCE_STANDARD.md)
 
 ## Environment
 
@@ -23,6 +23,13 @@ labels: defect, manual-qa
 1.
 2.
 3.
+
+## Reproduction and Oracle
+
+- Clean-session reset method:
+- Reproduced attempts / total attempts:
+- Expected behavior source:
+- Account-specific intentional sandbox behavior?:
 
 ## Actual Result
 
@@ -50,3 +57,4 @@ labels: defect, manual-qa
 - [ ] Fixed
 - [ ] Retest passed
 - [ ] Closed
+
