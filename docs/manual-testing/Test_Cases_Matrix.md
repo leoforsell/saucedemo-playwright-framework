@@ -8,7 +8,7 @@
 | Version | 0.1.0 |
 | Related strategy | [Test Strategy](Test_Strategy_SauceDemo.md) |
 
-These are proposed portfolio expectations, to be reviewed during the first walkthrough. Use independent clean sessions and the standard demo account unless a case states otherwise. The ten baseline cases are retained; TC-AUTH-003 adds the invalid-login scenario required in Week 2. All remain **Not run**.
+These are proposed portfolio expectations, to be reviewed during the first walkthrough. Use independent clean sessions and the standard demo account unless a case states otherwise. The ten baseline cases are retained; TC-AUTH-003 adds the invalid-login scenario required in Week 2. The two manual results recorded below are retained from the 2026-10-02 run; the remaining manual cases are **Not run**. The expanded case definitions should be reviewed against that historical evidence before claiming full coverage.
 
 Technique notes: removing the last cart item is a valid state transition (one item → empty), not a negative test. An empty required field is an invalid equivalence partition; do not label it boundary-value analysis without a specified numeric or ordered boundary.
 
@@ -27,12 +27,12 @@ Technique notes: removing the last cart item is a valid state transition (one it
 
 | Test ID | Module | User story | Risk | Priority | Type | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| TC-AUTH-001 | Authentication | US-01 | R-01 | P1 | Positive | Not run |
+| TC-AUTH-001 | Authentication | US-01 | R-01 | P1 | Positive | PASS |
 | TC-AUTH-002 | Authentication | US-01 | R-01 | P1 | Negative | Not run |
 | TC-AUTH-003 | Authentication | US-01 | R-01 | P1 | Negative / equivalence partition | Not run |
 | TC-INV-001 | Inventory | US-02 | R-02 | P1 | Positive | Not run |
 | TC-INV-002 | Sorting | US-02 | R-03 | P2 | Positive | Not run |
-| TC-CART-001 | Cart | US-03 | R-04 | P1 | Positive | Not run |
+| TC-CART-001 | Cart | US-03 | R-04 | P1 | Positive | PASS |
 | TC-CART-002 | Cart | US-03 | R-04 | P2 | Positive / state transition | Not run |
 | TC-CHK-001 | Checkout | US-04 | R-05 | P1 | Positive | Not run |
 | TC-CHK-002 | Checkout | US-04 | R-05 | P1 | Negative / equivalence partition | Not run |
@@ -129,7 +129,7 @@ Technique notes: removing the last cart item is a valid state transition (one it
 
 | Test ID | Tester | Environment | Date | Result | Evidence |
 | --- | --- | --- | --- | --- | --- |
-| No execution recorded | Pending | Pending | Pending | Not run | Pending |
+| TC-AUTH-001 | Leo | Google Chrome 152.0 / macOS 26 | 2026-10-02 | PASS |<screenshots/Screenshot 2026-10-05 at 10.14.53.png>|
+| TC-CART-001 | Leo | Google Chrome 152.0 / macOS 26 | 2026-10-02 | PASS |<screenshots/Screenshot 2026-10-05 at 10.23.51.png> <screenshots/Screenshot 2026-10-05 at 10.24.15.png>|
 
 Use one row per case/run and link a completed [execution record](Execution_Record_Template.md). Keep automation status and manual results separate. Future coverage additions: independent subtotal/total calculations, all required checkout fields, and direct navigation after logout; a mapped case does not prove every aspect of its risk is covered.
-

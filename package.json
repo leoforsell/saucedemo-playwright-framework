@@ -1,0 +1,26 @@
+{
+  "name": "it-portfolio",
+  "version": "1.0.0",
+  "description": "A 16-week portfolio project for demonstrating practical quality assurance and test automation skills with the SauceDemo e-commerce sandbox.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoforsell/saucedemo-playwright-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/leoforsell/saucedemo-playwright-framework/issues"
+  },
+  "homepage": "https://github.com/leoforsell/saucedemo-playwright-framework#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4"
+  }
+}
